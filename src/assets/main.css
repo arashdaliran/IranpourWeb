@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(34, 34, 34);
+}
+.title{
+  font-family:monotype;
+  font-size: 8vmin;
+  text-shadow: 5px;
+    color: #f2f2f2;
+}
+
+#app {
+  margin: 0;
+  z-index: -2;
+  font-weight: normal;
+}
+.subtitle{
+  font-family:monospace;
+  color: antiquewhite;
+  text-align: center;
+}
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(0, 0%, 49%, 0.541);
+    border-bottom:ridge 2px;
+  }
+}
+@font-face{
+  font-family: "garamonds";
+  src:url(../assets/fonts/GaramondRoughPro-Bold.ttf)
+}
+@font-face{
+  font-family: "monotype";
+  src:url(../assets/fonts/MTCORSVA.TTF)
+}
+/* @media (min-width: 720px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
