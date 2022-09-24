@@ -7,7 +7,6 @@
 <template>
   <NavigationBar id="navBar"/>
   <MainPart id="mainPart" />
-
 </template>
 
 <style>

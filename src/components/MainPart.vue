@@ -8,6 +8,7 @@
         <div class="element">
             <h1 class="title" >Alireza Iranpour</h1>
             <p class="subtitle" >PIANIST & COMPOSER</p>
+            <h2 class="comming">Comming soon...</h2>
         </div>
     </div>
 </template>
@@ -22,7 +23,7 @@
     .parent .element{
         height: 50%;
         max-height: 500px;
-        width: 100%;
+        width: 100%;        
     }
     .parent .element h1{
         text-align: center;

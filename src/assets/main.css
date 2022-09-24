@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +9,7 @@ body {
   background: rgb(34, 34, 34);
 }
 .title{
-  font-family:monotype;
+  font-family:'Damion', cursive;
   font-size: 8vmin;
   text-shadow: 5px;
     color: #f2f2f2;
@@ -27,6 +30,12 @@ a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   transition: 0.4s;
+}
+.comming{
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  margin: 20px;
+  color: white;
 }
 
 @media (hover: hover) {
