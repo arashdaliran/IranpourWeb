@@ -1,15 +1,17 @@
 <script setup>
-    import NavigationBar from '../components/NavigationBar.vue';
+import NavigationBar from '../components/NavigationBar.vue';
+import { useViewport } from '../plugins/NoobiesQueries';
+
+const vp = useViewport()
 </script>
 
 <template>
-    <NavigationBar/>
-    <main class="mainBody">
-        <img class="element" src="../assets/images/Alie.jpeg" alt="Alireza Iranpour" />
-        <div class="element">
-            <h1 class="title">Alireza Iranpour</h1>
+    <NavigationBar v-show="vp.isMobile" class="mobile-nav" />
+    <main class="mainBody" :class="{topMargin : vp.isMobile }">
+        <img src="../assets/images/piano-player.jpg" alt="Alireza Iranpour" />
+        <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
+        <div>
             <p class="subtitle">PIANIST & COMPOSER</p>
-            <div class="gooz"></div>
             <h2 class="comming">Comming soon...</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo neque, ut maximus enim egestas
                 ultrices. Vivamus vel tortor mattis, dignissim eros vel, ornare ante. Fusce scelerisque, leo efficitur
@@ -52,6 +54,20 @@
 </template>
 
 <style scoped>
+.topMargin {
+    padding-top: 54px;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.desktopNav {
+    align-items: center;
+}
+
 .mainBody {
     display: flex;
     flex-flow: column nowrap;
@@ -60,22 +76,12 @@
 }
 
 
-
-.mainBody .element h1 {
-    text-align: center;
-}
-
 img {
-
-    margin: 0;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-height: inherit;
-    max-width: 800px;
     object-fit: cover;
-    z-index: -1;
-
+    object-position: 50% 0%;
+    width: 100%;
+    height: auto;
+    /* max-height: 650px; */
 }
 
 .title {
@@ -86,17 +92,5 @@ img {
 .subtitle {
     font-size: 20px;
     padding-top: 20px;
-}
-
-@media screen and (min-width : 600px) {
-
-    .title {
-        display: none;
-    }
-
-    .subtitle {
-        font-size: 28px;
-        line-height: 80px;
-    }
 }
 </style>

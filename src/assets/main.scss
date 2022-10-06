@@ -3,6 +3,7 @@
 $titleColor: #f2f2f2;
 $itemColor: #ffffeb;
 $backgroundColor: rgb(34, 34, 34);
+$navbarColor: rgb(52, 52, 52);
 
 
 
@@ -10,55 +11,74 @@ $backgroundColor: rgb(34, 34, 34);
   margin: 0;
   padding: 0;
 }
+
 body {
-    background: $backgroundColor;
+  background: $backgroundColor;
+}
+
+main {
+  width: 100%;
+}
+
+header {
+  background-color: $navbarColor;
+  width: 100%;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: 'Damion', cursive;
+  height: 30px;
+  line-height: 30px;
+  color: $titleColor;
+}
+
+.subtitle {
+  font-family: monospace;
+  color: antiquewhite;
+  text-align: center;
+}
+
+a,
+button {
+  font-family: 'Caveat';
+  font-weight: bold;
+  text-decoration: none;
+  color: $itemColor;
+  transition: 0.4s;
+
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: $itemColor;
+
+  .square {
+    width: 48px;
+    height: 48px;
   }
-  header{
-    background-color: $backgroundColor;
+}
+
+.comming {
+  font-family: 'Caveat', cursive;
+  text-align: center;
+  margin: 20px;
+  color: white;
+}
+
+p,
+h3 {
+  color: #f2f2f2;
+}
+
+
+@media (hover: hover) {
+
+  a:hover,
+  button:hover {
+    background-color: hsla(0, 0%, 49%, 0.541);
+    border-radius: 10px;
+    border-bottom: ridge 2px;
   }
-  h1{
-    font-family:'Damion', cursive;
-    height: 30px;
-    line-height: 30px;
-    color: $titleColor;
-  }
-  .subtitle{
-    font-family:monospace;
-    color: antiquewhite;
-    text-align: center;
-  }
-  a , button {
-    font-family: 'Caveat';
-    font-weight: bold;
-    text-decoration: none;
-    color: $itemColor;
-    transition: 0.4s;
-    
-  }
-  button{
-    background-color: transparent;
-    border: none;
-    color: $itemColor;
-    .square{
-        width: 48px;
-        height: 48px;
-    }
-  }
-  .comming{
-    font-family: 'Caveat', cursive;
-    text-align: center;
-    margin: 20px;
-    color: white;
-  }
-  p , h3{
-    color: #f2f2f2;
-  }
- 
-  
-  @media (hover: hover) {
-    a:hover,button:hover {
-      background-color: hsla(0, 0%, 49%, 0.541);
-      border-radius: 10px;
-      border-bottom:ridge 2px;
-    }
-  }
+}

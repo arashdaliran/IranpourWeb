@@ -1,17 +1,24 @@
+import { computed } from '@vue/reactivity'
 import { onMounted, onUnmounted, reactive } from 'vue'
 const breakpoints = {
     mobile: 0,
     tablet: 500,
     desktop: 700
 }
+export function isView(){
+
+}
 export function useViewport() {
-    
+    const isMobCom = computed(() =>{
+        return res.type == 'mobile'
+    })
     const res = reactive({
         width: 0,
         height: 0,
         type: 'default',
+        isMobile : isMobCom,
     })
-    
+
     function update() {
         res.width = window.innerWidth
         res.height = window.innerHeight

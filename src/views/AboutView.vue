@@ -5,5 +5,7 @@ import NavigationBar from '../components/NavigationBar.vue';
 
 <template>
     <NavigationBar></NavigationBar>
-    <h1>This is About Page</h1>
+    <template style="margin-top: 40px;">
+        <h1>This is About Page</h1>
+    </template>
 </template>
