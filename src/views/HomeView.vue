@@ -81,7 +81,7 @@ img {
     object-position: 50% 0%;
     width: 100%;
     height: auto;
-    /* max-height: 650px; */
+    max-height: 650px;
 }
 
 .title {
