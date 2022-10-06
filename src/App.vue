@@ -1,15 +1,15 @@
 <script setup>
-  import NavigationBar from './components/NavigationBar.vue';
-  import MainPart from './components/MainPart.vue';
+  import {RouterView} from 'vue-router'
 
 </script>
 
 <template>
-  <NavigationBar id="navBar"/>
-  <MainPart id="mainPart" />
+  <RouterView  :style="viewStyle" />
 
 </template>
 
 <style>
-
+ p{
+  color: aliceblue;
+ }
 </style>
