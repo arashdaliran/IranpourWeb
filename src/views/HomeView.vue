@@ -3,15 +3,26 @@ import NavigationBar from '../components/NavigationBar.vue';
 import { useViewport } from '../plugins/NoobiesQueries';
 
 const vp = useViewport()
+const vFontSizer = {
+  updated(el, binding) {
+    let size = binding.value * vp.width + 'px'
+    el.style.fontSize = size
+    el.style.lineHeight = size
+  },
+
+}
 </script>
 
 <template>
     <NavigationBar v-show="vp.isMobile" class="mobile-nav" />
     <main class="mainBody" :class="{topMargin : vp.isMobile }">
-        <img src="../assets/images/piano-player.jpg" alt="Alireza Iranpour" />
+        <div class="imageContainer">
+            <img src="../assets/images/piano-player.jpg" alt="Alireza Iranpour" />
+            <h1 v-font-sizer="0.06" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
+            <p v-font-sizer="0.04" class="subtitle">PIANIST & COMPOSER</p>
+        </div>
         <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
         <div>
-            <p class="subtitle">PIANIST & COMPOSER</p>
             <h2 class="comming">Comming soon...</h2>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo neque, ut maximus enim egestas
                 ultrices. Vivamus vel tortor mattis, dignissim eros vel, ornare ante. Fusce scelerisque, leo efficitur
@@ -53,19 +64,27 @@ const vp = useViewport()
     </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../assets/main.scss' as *;
+
 .topMargin {
-    padding-top: 54px;
+    padding-top: $appBarHeight;
 }
 
 .mobile-nav {
     position: fixed;
     top: 0;
     width: 100%;
+    min-height: $appBarHeight;
+    z-index: 1000;
 }
 
 .desktopNav {
     align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    bottom: 0;
 }
 
 .mainBody {
@@ -75,6 +94,12 @@ const vp = useViewport()
     align-items: center;
 }
 
+.imageContainer{
+    position: relative;
+    width: 100%;
+    margin-bottom: -10px;
+    padding: 0;
+}
 
 img {
     object-fit: cover;
@@ -84,13 +109,19 @@ img {
     max-height: 650px;
 }
 
-.title {
-    display: block;
-    font-weight: bolder;
+.titleDesktop {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 .subtitle {
-    font-size: 20px;
-    padding-top: 20px;
+    position: absolute;
+    // font-size: 10px;
+    font-weight: bold;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    bottom: 10%;
+    left: 50%;
 }
 </style>

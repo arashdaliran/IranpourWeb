@@ -5,9 +5,7 @@ const breakpoints = {
     tablet: 500,
     desktop: 700
 }
-export function isView(){
 
-}
 export function useViewport() {
     const isMobCom = computed(() =>{
         return res.type == 'mobile'

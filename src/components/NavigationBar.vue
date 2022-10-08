@@ -10,6 +10,7 @@ function toggleNavMenu() {
     navigationMenuHeight.value = isNavMenuOpen ? '0px' : '800px'
     isArtworksOpen.value = false
     isNavMenuOpen = !isNavMenuOpen
+    console.log("is it working : " + navigationMenuHeight.value);
 }
 let isArtworksOpen = ref(false)
 let artworksMenuHeight = ref('0px')
@@ -20,7 +21,7 @@ function toggleArtworksMenu() {
 </script>
 
 <template>
-    <header :class="{sticky : !vp.isMobile}">
+    <header>
         <div class="appBar" :class="{appBarDesktop : !vp.isMobile}">
             <h1>Alireza Iranpour</h1>
             <button class="menuButton" @click="toggleNavMenu()"></button>
@@ -49,20 +50,12 @@ function toggleArtworksMenu() {
 </template>
 
 <style scoped lang="scss">
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-}
-
 .appBar {
     padding: 2px 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    height: 50px;
 
     h1 {
         flex-grow: 1;
@@ -95,7 +88,7 @@ function toggleArtworksMenu() {
 
     >* {
         width: 100%;
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
         align-self: center;
         padding: 10px;
@@ -108,7 +101,6 @@ function toggleArtworksMenu() {
     justify-content: space-around;
     max-width: 600px;
     margin: auto;
-
     .artDesktop {
         display: flex;
         flex-direction: row;
