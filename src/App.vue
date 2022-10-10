@@ -1,15 +1,21 @@
 <script setup>
-  import {RouterView} from 'vue-router'
+import { RouterView } from 'vue-router'
+import Footer from './components/Footer.vue';
 
 </script>
 
 <template>
-  <RouterView  :style="viewStyle" />
-
+  <RouterView :style="viewStyle" />
+  <Footer class="footer" />
 </template>
 
-<style>
- p{
+<style scoped>
+.footer {
+  padding :  10px;
+  background-color: rgb(24, 24, 20);
+}
+
+p {
   color: aliceblue;
- }
+}
 </style>

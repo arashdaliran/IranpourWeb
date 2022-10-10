@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Monsieur+La+Doulaise&family=Quintessential&family=Tangerine:wght@400;700&display=swap');
+// Colors:
 $titleColor: #f2f2f2;
 $itemColor: #ffffeb;
 $backgroundColor: rgb(34, 34, 34);
 $navbarColor: rgb(52, 52, 52);
+$clickedColor: rgb(99, 99, 78);
 //fonts:
 $titleFont : 'Monsieur La Doulaise', cursive;
 $linkFont : 'Quintessential', cursive;
@@ -49,7 +51,7 @@ button {
   font-size: small;
   text-decoration: none;
   color: $itemColor;
-  transition: 0.4s;
+  transition: background-color 0.4s, border-radius 0.4s;
 
 }
 
@@ -72,18 +74,17 @@ button {
 }
 
 p,
-h3 {
+h2, h3, h4,h5 ,h6{
   font-family: $textFont;
   color: #f2f2f2;
 }
-
-
-@media (hover: hover) {
-
-  a:hover,
+a:hover,
   button:hover {
     background-color: hsla(0, 0%, 49%, 0.541);
     border-radius: 10px;
     border-bottom: ridge 2px;
   }
-}
+  a:active,
+  button:active {
+    background-color: $clickedColor ;
+  }

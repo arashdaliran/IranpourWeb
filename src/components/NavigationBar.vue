@@ -119,7 +119,7 @@ function toggleArtworksMenu() {
     max-height: v-bind(artworksMenuHeight);
 
     >* {
-        padding: 7px;
+        padding: 7px 0px;
     }
 }
 
