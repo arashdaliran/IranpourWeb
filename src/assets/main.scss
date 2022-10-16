@@ -11,7 +11,7 @@ $linkFont : 'Quintessential', cursive;
 $subtitleFont : 'Josefin Slab', serif;
 $textFont : 'Josefin Slab', serif;
 //sizes:
-$appBarHeight : 50px;
+$appBarHeight : 60px;
 
 * {
   margin: 0;
@@ -64,13 +64,6 @@ button {
     width: 48px;
     height: 48px;
   }
-}
-
-.comming {
-  font-family: 'Caveat', cursive;
-  text-align: center;
-  margin: 20px;
-  color: white;
 }
 
 p,

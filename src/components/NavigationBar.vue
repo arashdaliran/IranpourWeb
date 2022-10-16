@@ -24,7 +24,9 @@ function toggleArtworksMenu() {
     <header>
         <div class="appBar" :class="{appBarDesktop : !vp.isMobile}">
             <h1>Alireza Iranpour</h1>
-            <button class="menuButton" @click="toggleNavMenu()"></button>
+            <button class="menuButton" @click="toggleNavMenu()">
+                <img src="../assets/images/menu.svg" />
+            </button>
         </div>
         <nav class="navigationMenu" :class="{navMenuDesktop : !vp.isMobile}">
             <RouterLink to="/">Home</RouterLink>
@@ -62,9 +64,11 @@ function toggleArtworksMenu() {
     }
 
     .menuButton {
-        width: 48px;
-        height: 48px;
-        background-image: url(../assets/images/menu.svg);
+        margin: 10px;
+        > img{
+            height: 40px;
+            width: 45px;
+        }
     }
 }
 

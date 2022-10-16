@@ -1,66 +1,30 @@
 <script setup>
 import NavigationBar from '../components/NavigationBar.vue';
 import { useViewport } from '../plugins/NoobiesQueries';
+import LatestComponent from '../components/LatestComponent.vue';
 
 const vp = useViewport()
 const vFontSizer = {
-  updated(el, binding) {
-    let size = binding.value * vp.width + 'px'
-    el.style.fontSize = size
-    el.style.lineHeight = size
-  },
+    updated(el, binding) {
+        let size = binding.value * vp.width + 'px'
+        el.style.fontSize = size
+        el.style.lineHeight = size
+    },
 
 }
+
 </script>
 
 <template>
     <NavigationBar v-show="vp.isMobile" class="mobile-nav" />
     <main class="mainBody" :class="{topMargin : vp.isMobile }">
         <div class="imageContainer">
-            <img src="../assets/images/piano-player.jpg" alt="Alireza Iranpour" />
+            <img src="../assets/images/home/iranpour-main.png" alt="Alireza Iranpour" />
             <h1 v-font-sizer="0.06" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
             <p v-font-sizer="0.04" class="subtitle">PIANIST & COMPOSER</p>
         </div>
         <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
-        <div>
-            <h2 class="comming">Comming soon...</h2>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo neque, ut maximus enim egestas
-                ultrices. Vivamus vel tortor mattis, dignissim eros vel, ornare ante. Fusce scelerisque, leo efficitur
-                faucibus fermentum, dui nisi dignissim libero, bibendum facilisis lorem purus ac dui. Donec bibendum
-                scelerisque malesuada. Donec sagittis gravida turpis nec egestas. In condimentum in massa id aliquam. Ut
-                in pulvinar sapien. Vivamus eget laoreet massa. Nullam at risus cursus, elementum elit non, pulvinar
-                nunc. Suspendisse potenti. Morbi malesuada purus orci, auctor scelerisque ex scelerisque in. Nullam
-                luctus euismod ligula ac imperdiet. Suspendisse lacinia dolor hendrerit, iaculis urna ut, commodo
-                tortor. Nam pharetra, dolor eu posuere varius, nunc lacus blandit nulla, vitae accumsan elit sem in mi.
-
-                Pellentesque odio mauris, fringilla ac euismod sed, cursus quis arcu. Pellentesque quis varius nulla. In
-                euismod felis vitae mollis tempus. Aliquam erat volutpat. Sed tempus mollis aliquet. In hac habitasse
-                platea dictumst. Maecenas lobortis dui ac mi scelerisque pretium. Aenean cursus nisl elit, sit amet
-                vulputate nisi fringilla nec. In elit lectus, pellentesque non volutpat non, egestas et diam. Morbi
-                pharetra elementum arcu, sed suscipit ex cursus vitae. Integer rutrum a est vel facilisis.
-
-                Integer tempor eros semper volutpat tincidunt. Donec quam tortor, viverra at ipsum sed, tincidunt
-                facilisis neque. Suspendisse a nisi pretium, vestibulum libero eget, consequat lacus. Vestibulum ac
-                condimentum dui. Donec dapibus sodales arcu quis pulvinar. Pellentesque vel eros vel nulla feugiat
-                consequat. Proin nec orci id nisl interdum porta.
-
-                Praesent sagittis pretium scelerisque. Donec quis lectus sed ipsum aliquam placerat. Integer convallis
-                at neque auctor consectetur. In nec pulvinar ipsum, eget sagittis sapien. Nullam nec ante sollicitudin,
-                porttitor ipsum quis, luctus mi. Phasellus pellentesque auctor velit, in sollicitudin neque bibendum et.
-                Nulla id orci eget mauris convallis tristique. Sed ultricies ut purus a consectetur. Fusce magna elit,
-                mattis ut fermentum sit amet, dapibus tristique risus. Duis eleifend ex quis imperdiet pretium. Nam id
-                turpis turpis. Maecenas luctus augue ut elit condimentum, tincidunt pharetra massa consectetur. Mauris
-                ut nisl molestie, vestibulum urna eget, commodo quam. Nulla quis enim ullamcorper, pulvinar mi ut,
-                lacinia erat.
-
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris nulla
-                velit, posuere eget velit scelerisque, elementum egestas risus. Nunc congue urna nunc, a aliquet magna
-                aliquam eget. Fusce non fermentum nisi, vitae condimentum quam. Nullam lacinia augue neque, quis
-                placerat elit tempus vitae. Integer tempor justo sit amet ligula consequat, quis semper orci dignissim.
-                Vestibulum ligula lorem, tincidunt in maximus a, sollicitudin sed nibh. Sed tempus sapien sed arcu
-                dictum dapibus. Praesent consectetur, diam id pulvinar porttitor, diam arcu commodo velit, quis
-                venenatis libero massa aliquam eros. Mauris ex justo, volutpat vitae mi at, cursus lacinia nibh.</h3>
-        </div>
+        <LatestComponent />
     </main>
 </template>
 
@@ -94,7 +58,7 @@ const vFontSizer = {
     align-items: center;
 }
 
-.imageContainer{
+.imageContainer {
     position: relative;
     width: 100%;
     margin-bottom: -10px;
@@ -113,6 +77,9 @@ img {
     position: absolute;
     top: 20px;
     left: 20px;
+    color: black;
+    font-weight: bolder;
+    text-shadow: 3px 3px 10px white;
 }
 
 .subtitle {
@@ -123,5 +90,6 @@ img {
     transform: translate(-50%, -50%);
     bottom: 10%;
     left: 50%;
+    text-shadow: 2px 2px 10px black;
 }
 </style>
