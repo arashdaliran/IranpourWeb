@@ -53,7 +53,7 @@ function toggleArtworksMenu() {
 
 <style scoped lang="scss">
 .appBar {
-    padding: 2px 10px;
+    padding: 0px 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
