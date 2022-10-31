@@ -10,11 +10,15 @@ export function useViewport() {
     const isMobCom = computed(() =>{
         return res.type == 'mobile'
     })
+    const isDesktopCom = computed(()=>{
+        return res.type == 'desktop'
+    })
     const res = reactive({
         width: 0,
         height: 0,
         type: 'default',
         isMobile : isMobCom,
+        isDesktop : isDesktopCom
     })
 
     function update() {

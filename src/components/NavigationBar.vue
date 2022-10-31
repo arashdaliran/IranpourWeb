@@ -1,7 +1,17 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useViewport } from '../plugins/NoobiesQueries';
+
+const props = defineProps(['opBtnImage'])
+
+const hasExtraButton = ref(props.opBtnImage != undefined)
+console.log(hasExtraButton.value + " is my image");
+
+function getImageUrl(){
+    return new URL(`../assets/images/album/${props.opBtnImage}`, import.meta.url)
+}
+
 
 const vp = useViewport()
 let navigationMenuHeight = ref('0px')
@@ -10,7 +20,6 @@ function toggleNavMenu() {
     navigationMenuHeight.value = isNavMenuOpen ? '0px' : '800px'
     isArtworksOpen.value = false
     isNavMenuOpen = !isNavMenuOpen
-    console.log("is it working : " + navigationMenuHeight.value);
 }
 let isArtworksOpen = ref(false)
 let artworksMenuHeight = ref('0px')
@@ -23,6 +32,10 @@ function toggleArtworksMenu() {
 <template>
     <header>
         <div class="appBar" :class="{appBarDesktop : !vp.isMobile}">
+            <button v-show="hasExtraButton">
+                <img class="extraBtnImg" :src="getImageUrl()"
+                style="height: 40px; width: 40px; padding: 8px;" />
+            </button>
             <h1>Alireza Iranpour</h1>
             <button class="menuButton" @click="toggleNavMenu()">
                 <img src="../assets/images/menu.svg" />
@@ -71,7 +84,11 @@ function toggleArtworksMenu() {
         }
     }
 }
-
+.extraBtnImg{
+    // height: 48px;
+    // width: 48px;
+    object-fit: cover;
+}
 .appBarDesktop {
     display: none;
 }

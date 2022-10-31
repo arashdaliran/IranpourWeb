@@ -70,6 +70,7 @@ p{
   font-family: $textFont;
   font-size: large;
   color: #e6e6e6;
+  padding-bottom: 20px;
 }
 h2{
   font-size: 35px;
@@ -91,11 +92,17 @@ h2, h3, h4,h5 ,h6{
   font-family: $textFont;
   color: #f2f2f2;
 }
+//style of classes:
+.farsi {
+  text-align: right;
+  direction: rtl;
+}
+
+//selectors: 
 a:hover,
   button:hover {
     background-color: hsla(0, 0%, 49%, 0.541);
     border-radius: 10px;
-    border-bottom: ridge 2px;
   }
   a:active,
   button:active {
