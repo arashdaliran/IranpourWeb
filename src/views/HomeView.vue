@@ -4,6 +4,7 @@ import { useViewport } from '../plugins/NoobiesQueries';
 import LatestComponent from '../components/LatestComponent.vue';
 
 const vp = useViewport()
+//todo move this to a composable file
 const vFontSizer = {
     updated(el, binding) {
         let size = binding.value * vp.width + 'px'

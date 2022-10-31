@@ -1,27 +1,29 @@
 <script setup>
 import { ref } from 'vue';
+import { useViewport } from '../plugins/NoobiesQueries';
 const emit = defineEmits('isTranslate')
 const isTranslateSelected = ref(false)
-
+const vp = useViewport()
 </script>
 
 <template>
     <div>
-        <div class="translateBox">
+        <div v-if="!vp.isDesktop" class="translateBox">
             <h5>Language :</h5>
             <button :class="{ selectedButton: !isTranslateSelected }"
-            @click="isTranslateSelected = false">persian</button>
+                @click="isTranslateSelected = false">persian</button>
             <h5 style="user-select:none ;">|</h5>
-            <button :class="{ selectedButton: isTranslateSelected }" 
-            @click="isTranslateSelected = true">english</button>
+            <button :class="{ selectedButton: isTranslateSelected }"
+                @click="isTranslateSelected = true">english</button>
         </div>
-        <div :class="{collapse : isTranslateSelected}">
-            <slot></slot>
+        <div :class="{desktopDesc : vp.isDesktop}">
+            <div :class="{ collapse: isTranslateSelected && !vp.isDesktop }">
+                <slot></slot>
+            </div>
+            <div :class="{ collapse: !isTranslateSelected && !vp.isDesktop }">
+                <slot name="translate"></slot>
+            </div>
         </div>
-        <div :class="{collapse : !isTranslateSelected}">
-            <slot name="translate"></slot>
-        </div>
-
     </div>
 </template>
 
@@ -29,16 +31,25 @@ const isTranslateSelected = ref(false)
 button {
     font-weight: bolder;
 }
-.collapse{
-    max-height : 0;
+
+.collapse {
+    max-height: 0;
     overflow: hidden;
 }
+
 .selectedButton {
     background-color: rgb(255, 253, 192);
     color: rgb(42, 42, 42);
     border-radius: 5px;
 }
-
+.desktopDesc{
+    display: flex;
+    flex-direction: row;
+    > *{
+        flex: 50%;
+        padding: 0 10px;
+    }
+}
 .translateBox {
     padding: 10px 5px;
     display: flex;
