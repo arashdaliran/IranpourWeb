@@ -11,7 +11,7 @@ const vp = useViewport()
             <img class="albumImage" src="../assets/images/album/Hengam.jpeg" />
             <h3 class="marginWithFoto">Hengam</h3>
             <h4 class="marginWithFoto">2020</h4>
-            <p class="marginWithFoto">Inspired by the red sand beach called Hormuz, and the calmness of
+            <p class="marginWithFoto" >Inspired by the red sand beach called Hormuz, and the calmness of
                 Hengam Island, which are located in the south of Iran. This piece consists of two parts, the first part
                 is the prelude. </p>
         </a>
@@ -24,9 +24,7 @@ const vp = useViewport()
 <style scoped lang="scss">
 @use '../assets/main.scss' as *;
 
-main{
-    max-width: 1000px;
-}
+
 h2 {
     text-align: center;
     margin: 30px;
@@ -64,7 +62,7 @@ h2 {
         float: left;
     }
 
-    >.marginWithFoto {
+    >h3 , h4, p {
         padding-left: 10vmin;
         text-align: left;
         width: auto;

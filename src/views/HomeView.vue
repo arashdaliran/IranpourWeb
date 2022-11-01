@@ -18,7 +18,7 @@ const vFontSizer = {
 
 <template>
     <NavigationBar v-show="vp.isMobile" class="mobile-nav" />
-    <main class="mainBody" :class="{topMargin : vp.isMobile }">
+    <template class="mainBody" :class="{ topMargin: vp.isMobile }">
         <div class="imageContainer">
             <img src="../assets/images/home/iranpour-main.png" alt="Alireza Iranpour" />
             <h1 v-font-sizer="0.06" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
@@ -26,7 +26,7 @@ const vFontSizer = {
         </div>
         <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
         <LatestComponent />
-    </main>
+    </template>
 </template>
 
 <style scoped lang="scss">
@@ -84,12 +84,15 @@ img {
 }
 
 .subtitle {
+    font-family: $subtitleFont;
+    color: antiquewhite;
+    text-align: center;
     position: absolute;
     // font-size: 10px;
     font-weight: bold;
     width: 100%;
     transform: translate(-50%, -50%);
-    bottom: 10%;
+    bottom: 0%;
     left: 50%;
     text-shadow: 2px 2px 10px black;
 }

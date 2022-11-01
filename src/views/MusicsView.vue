@@ -1,16 +1,40 @@
 <script setup>
+import { reactive } from 'vue';
 import DescriptionBox from '../components/DescriptionBox.vue';
 import NavigationBar from '../components/NavigationBar.vue'
+import TrackComponent from '../components/TrackComponent.vue';
+import { useUrl } from '../plugins/NoobiesUrlMaker';
+
+const snowWaltz = reactive({
+    name : "Snow Waltz",
+    date : "September 9, 2021",
+    imgSrc : useUrl("../assets/images/album/snow.jpeg")
+})
+const ethernalReturn = reactive({
+    name : "Ethernal Return",
+    date : "September 9, 2021",
+    imgSrc : useUrl("../assets/images/album/ethernal.jpeg")
+})
 
 </script>
 
 <template>
     <NavigationBar class="mobileNav" opBtnImage="Hengam.jpeg" />
-    <div class="main">
-        <h3>Eternal return album</h3>
-        <img src="../assets/images/album/ethernal.jpeg" />
-        <h5>2020</h5>
-        <h4>Description</h4>
+    <main class="main">
+        <img :src="snowWaltz.imgSrc" alt="Snow Waltz" />
+        <h3>{{snowWaltz.name}}</h3>
+        <h5>{{snowWaltz.date}}</h5>
+        <DescriptionBox>
+            <template #default>
+                <p class="farsi">او را در یک شب پاییزی برای اولین بار ملاقات نمودم. هوا بسیار سرد بود و ناگهان بارش برف شروع شد. با اینکه سرما استخوان را می‌شکست، اما آتشِ بین دل‌هایمان ما را گرم می‌کرد.</p>
+            </template>
+            <template #translate>
+                <p>I met her on an autumn night for the first time. The weather got extremely cold and all of a sudden it started to snow. Although it was freezing, the closeness between us warmed our hearts.</p>
+            </template>
+        </DescriptionBox>
+        <img :src="ethernalReturn.imgSrc" />
+        <h3>{{ethernalReturn.name}}</h3>
+        <h5>{{ethernalReturn.date}}</h5>
         <DescriptionBox >
             <template #default>
                 <p class="farsi">چه می‌شود اگر روزی یا شبی یک دیو شما را در تنهاترین تنهایی شما بدزدد و به شما بگوید: «این زندگی را که اکنون در آن زندگی می‌کنید و زندگی کرده‌اید، باید یک بار دیگر و چندین بار دیگر زندگی کنید.» در آن چیز جدیدی نخواهد بود، اما هر درد و هر شادی و هر فکر و آه و هر چیزی که به طور غیرقابل توصیفی کوچک یا بزرگ در زندگی شما وجود دارد باید به همان ترتیب و توالی به شما بازگردد. . . » <br>آیا خودت را پایین نمی‌اندازی و دندان قروچه نمی‌کنی و به دیویی که اینطور صحبت می‌کند نفرین نمی‌کنی؟ یا آیا یک بار لحظه ای فوق العاده را تجربه کرده‌اید که به او پاسخ می‌دهید: «تو خدایی و من هرگز خدایی تر از این نشنیدم»</p>
@@ -28,7 +52,7 @@ import NavigationBar from '../components/NavigationBar.vue'
         </DescriptionBox>
 
 
-    </div>
+    </main>
 </template>
 
 <style scoped lang="scss">
@@ -45,7 +69,7 @@ import NavigationBar from '../components/NavigationBar.vue'
 
 .main {
     margin-top: $appBarHeight;
-    padding: 10px 50px;
+    // padding: 10px 50px;
 
     >* {
         margin-top: 10px;
@@ -53,16 +77,24 @@ import NavigationBar from '../components/NavigationBar.vue'
 }
 
 //album style
+
 h3,
-h4 {
+h4, 
+h5 {
     //padding-top: 30px;
     text-align: center;
+    text-transform: capitalize;
 }
 
 img {
     display: block;
     width: 100%;
+    max-width: 400px;
     margin: auto;
     margin-top: 20px;
+}
+.trackImg{
+    height: 70px;
+    
 }
 </style>

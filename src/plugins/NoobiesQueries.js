@@ -3,7 +3,7 @@ import { onMounted, onUnmounted, reactive } from 'vue'
 const breakpoints = {
     mobile: 0,
     tablet: 500,
-    desktop: 700
+    desktop: 750
 }
 
 export function useViewport() {

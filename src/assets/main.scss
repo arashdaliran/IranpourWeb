@@ -3,6 +3,7 @@
 $titleColor: #f2f2f2;
 $itemColor: #ffffeb;
 $backgroundColor: rgb(34, 34, 34);
+$itemBgColor: rgb(46, 46, 46);
 $navbarColor: rgb(52, 52, 52);
 $clickedColor: rgb(147, 147, 116);
 //fonts:
@@ -23,7 +24,10 @@ body {
 }
 
 main {
-  width: 100%;
+  // width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  padding: 20px;
 }
 
 header {
@@ -39,11 +43,6 @@ h1 {
   color: $titleColor;
 }
 
-.subtitle {
-  font-family: $subtitleFont;
-  color: antiquewhite;
-  text-align: center;
-}
 
 a,
 button {
@@ -54,7 +53,9 @@ button {
   transition: background-color 0.4s, border-radius 0.4s;
 
 }
-
+img{
+  object-fit: cover;
+}
 button {
   background-color: transparent;
   border: none;
@@ -71,6 +72,7 @@ p{
   font-size: large;
   color: #e6e6e6;
   padding-bottom: 20px;
+  line-height: 25px;
 }
 h2{
   font-size: 35px;

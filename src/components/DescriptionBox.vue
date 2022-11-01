@@ -8,6 +8,7 @@ const vp = useViewport()
 
 <template>
     <div>
+        <h4>Description<br></h4>
         <div v-if="!vp.isDesktop" class="translateBox">
             <h5>Language :</h5>
             <button :class="{ selectedButton: !isTranslateSelected }"
@@ -32,8 +33,13 @@ button {
     font-weight: bolder;
 }
 
+h4{
+    text-align: center;
+    line-height: 30px;
+}
+
 .collapse {
-    max-height: 0;
+    display: none;
     overflow: hidden;
 }
 
