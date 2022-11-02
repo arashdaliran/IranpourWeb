@@ -7,7 +7,7 @@ const vp = useViewport()
 </script>
 
 <template>
-    <div>
+    <div style="padding-top: 25px;">
         <h4>Description<br></h4>
         <div v-if="!vp.isDesktop" class="translateBox">
             <h5>Language :</h5>
@@ -29,6 +29,7 @@ const vp = useViewport()
 </template>
 
 <style scoped lang="scss">
+// @use '../assets/main.scss' as *;
 button {
     font-weight: bolder;
 }
@@ -44,16 +45,17 @@ h4{
 }
 
 .selectedButton {
-    background-color: rgb(255, 253, 192);
+    background-color:#dd9;
+    // background-color:$selectedBgColor;
     color: rgb(42, 42, 42);
     border-radius: 5px;
 }
 .desktopDesc{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     > *{
         flex: 50%;
-        padding: 0 10px;
+        padding: 10px 20px;
     }
 }
 .translateBox {

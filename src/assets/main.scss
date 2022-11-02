@@ -2,6 +2,7 @@
 // Colors:
 $titleColor: #f2f2f2;
 $itemColor: #ffffeb;
+$selectedBgColor : rgb(255, 245, 187);
 $backgroundColor: rgb(34, 34, 34);
 $itemBgColor: rgb(46, 46, 46);
 $navbarColor: rgb(52, 52, 52);
@@ -70,9 +71,13 @@ button {
 p{
   font-family: $textFont;
   font-size: large;
+  font-weight: 600;
   color: #e6e6e6;
   padding-bottom: 20px;
   line-height: 25px;
+}
+code{
+  font-weight: 100;
 }
 h2{
   font-size: 35px;

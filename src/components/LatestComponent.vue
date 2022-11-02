@@ -6,7 +6,7 @@ const vp = useViewport()
 
 <template>
     <main>
-        <h2 :class="{biggerFont: !vp.isMobile }">Latest Single</h2>
+        <h2 :class="{biggerFont: !vp.isMobile }">Latest Singles</h2>
         <a :class="{ albumDesktop: !vp.isMobile }" href="/musics">
             <img class="albumImage" src="../assets/images/album/Hengam.jpeg" />
             <h3 class="marginWithFoto">Hengam</h3>
@@ -47,7 +47,7 @@ h2 {
 
 .albumImage {
     display: block;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
