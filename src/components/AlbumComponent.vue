@@ -1,13 +1,19 @@
 <script setup>
 import DescriptionBox from './DescriptionBox.vue';
 import { useViewport } from '../plugins/NoobiesQueries';
+import { onMounted ,useSlots } from 'vue';
+import { computed } from '@vue/reactivity';
 const props = defineProps({
     name: String,
     image: URL,
     date: String,
 })
-
+const slots = useSlots()
+const hasTranslate = computed(() =>{
+    return slots.translate != undefined
+})
 const vp = useViewport()
+
 </script>
 
 <template>
@@ -23,7 +29,7 @@ const vp = useViewport()
                 <slot v-if="vp.isDesktop" name="listen"></slot>
             </div>
         </div>
-        <DescriptionBox>
+        <DescriptionBox :has-translate="hasTranslate">
             <template #default>
                 <slot name="mainDescription"></slot>
             </template>
