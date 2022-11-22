@@ -5,7 +5,7 @@ import { useViewport } from '../plugins/NoobiesQueries';
 </script>
 
 <template>
-    <div class="footer">
+    <footer id="footer" class="footer">
         <h3 class="title">Contact / Listen</h3>
         <ul class="itemsContainer" :class="{itemsDesktop : !vp.isMobile}">
             <a href="https://open.spotify.com/artist/2LVd7axk40plkAb8PfEwqW" target="_blank">
@@ -15,6 +15,10 @@ import { useViewport } from '../plugins/NoobiesQueries';
             <a href="https://www.youtube.com/channel/UCvYwAsq-ZRk4r2juPE9Z3YQ" target="_blank">
                 <img src="../assets/images/youtube.svg" />
                 <h5>YouTube</h5>
+            </a>
+            <a href="https://deezer.page.link/LoGvGJgLexhpcKQG6" target="_blank">
+                <img src="../assets/images/deezer.svg" />
+                <h5>Deezer</h5>
             </a>
             <a href="https://twitter.com/iranpour_alrz" target="_blank">
                 <img src="../assets/images/twitter.svg" />
@@ -26,16 +30,18 @@ import { useViewport } from '../plugins/NoobiesQueries';
             </a>
         </ul>
         <h4 class="developer">Designed & Developed by Arash Daliran</h4>
-    </div>
+    </footer>
 </template>
 
 <style scoped lang="scss">
 .footer {
+    position: relative;
     margin-top: 15px;
 }
 .title{
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .itemsContainer {
@@ -43,14 +49,15 @@ import { useViewport } from '../plugins/NoobiesQueries';
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
+    width: 90%;
+    margin: auto;
     >* {
         display: flex;
         flex-direction: row;
         justify-items: center;
         align-items: center;
-        padding: 5px 20px;
-        // width: fit-content;
+        padding: 5px;
+        margin: 5px;
     }
 }
 .itemsDesktop{

@@ -5,7 +5,6 @@ const breakpoints = {
     tablet: 500,
     desktop: 750
 }
-
 export function useViewport() {
     const isMobCom = computed(() =>{
         return res.type == 'mobile'
@@ -13,12 +12,16 @@ export function useViewport() {
     const isDesktopCom = computed(()=>{
         return res.type == 'desktop'
     })
+    const isTabletCom = computed(()=>{
+        return res.type == 'tablet'
+    })
     const res = reactive({
         width: 0,
         height: 0,
         type: 'default',
         isMobile : isMobCom,
-        isDesktop : isDesktopCom
+        isDesktop : isDesktopCom,
+        isTablet : isTabletCom
     })
 
     function update() {
@@ -43,4 +46,10 @@ export function useViewport() {
     })
     onUnmounted(() => window.removeEventListener('resize', update))
     return res
+}
+export function useScroll(func){
+    onMounted(()=>[
+        window.addEventListener('scroll',func)
+    ])
+    onUnmounted(()=> window.removeEventListener('scroll',func))
 }

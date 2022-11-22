@@ -1,21 +1,14 @@
 <script setup>
-import { computed } from '@vue/reactivity';
+import { ref } from '@vue/reactivity';
 
 const props = defineProps({
     spotify: URL,
     deezer: URL,
     youtube: URL
 })
-const hasSpotify = computed(() => {
-    console.log("Jende has a spotify? " + props.spotify);
-    return props.spotify != undefined
-})
-const hasDeezer = computed(() => {
-    return props.deezer != undefined
-})
-const hasYoutube = computed(() => {
-    return props.youtube != undefined
-})
+const hasSpotify = ref(props.spotify != undefined)
+const hasDeezer = ref(props.deezer != undefined)
+const hasYoutube = ref(props.youtube != undefined)
 </script>
 
 <template>

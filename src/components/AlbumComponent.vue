@@ -58,7 +58,6 @@ h5 {
     justify-content: space-around;
     justify-items: center;
     align-items: center;
-    background-color: rgb(52, 50, 46);
     >* {
         flex: 50%;
         align-items: center;

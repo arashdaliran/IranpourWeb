@@ -25,7 +25,6 @@ body {
 }
 
 main {
-  // width: 100%;
   margin: auto;
   max-width: 1000px;
   padding: 20px;
@@ -51,7 +50,7 @@ button {
   font-size: small;
   text-decoration: none;
   color: $itemColor;
-  transition: background-color 0.4s, border-radius 0.4s;
+  transition: background-color 0.2s, border-radius 0.2s;
 
 }
 img{

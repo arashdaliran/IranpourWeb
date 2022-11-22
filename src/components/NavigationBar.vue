@@ -4,13 +4,8 @@ import { RouterLink } from 'vue-router'
 import { useViewport } from '../plugins/NoobiesQueries';
 
 const props = defineProps(['opBtnImage'])
-
 const hasExtraButton = ref(props.opBtnImage != undefined)
-console.log(hasExtraButton.value + " is my image");
 
-function getImageUrl(){
-    return new URL(`../assets/images/album/${props.opBtnImage}`, import.meta.url)
-}
 
 
 const vp = useViewport()
@@ -32,8 +27,9 @@ function toggleArtworksMenu() {
 <template>
     <header>
         <div class="appBar" :class="{appBarDesktop : !vp.isMobile}">
-            <button v-show="hasExtraButton">
-                <img class="extraBtnImg" :src="getImageUrl()"
+            <button v-show="hasExtraButton" style="margin-right: 10px;"
+                @click="$emit('onOptionBtnClick')">
+                <img class="extraBtnImg" :src="props.opBtnImage"
                 style="height: 40px; width: 40px; padding: 8px;" />
             </button>
             <h1>Alireza Iranpour</h1>
@@ -42,6 +38,11 @@ function toggleArtworksMenu() {
             </button>
         </div>
         <nav class="navigationMenu" :class="{navMenuDesktop : !vp.isMobile}">
+            <button v-show="hasExtraButton && vp.isTablet" style="margin-right: 10px;"
+                @click="$emit('onOptionBtnClick')">
+                <img class="extraBtnImg" :src="props.opBtnImage"
+                style="height: 40px; width: 40px; padding: 8px;" />
+            </button>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
             <button @click="toggleArtworksMenu()" :class="{artDesktop : !vp.isMobile}">
@@ -55,6 +56,7 @@ function toggleArtworksMenu() {
                 <RouterLink to="/concerts">Concerts</RouterLink>
             </div>
             <RouterLink to="/gallery">Gallery</RouterLink>
+            <RouterLink to="#footer" @click="toggleNavMenu()">Contacts</RouterLink>
         </nav>
         <div v-if="isArtworksOpen && !vp.isMobile" class="artworksDesktop">
             <RouterLink to="/musics">Musics</RouterLink>

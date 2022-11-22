@@ -38,6 +38,18 @@ const router = createRouter({
       component: () => import("../views/GalleryView.vue"),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top : 80,
+      };
+    }
+    return { x: 0, y: 0 };
+  }
 });
 
 export default router;
