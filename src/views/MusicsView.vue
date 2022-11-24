@@ -9,42 +9,72 @@ import { useViewport } from '../plugins/NoobiesQueries';
 import { useUrl } from '../plugins/NoobiesUrlMaker';
 const vp = useViewport()
 const albums = reactive({
-    angel: {
-        id: 'angel',
-        name: "The Angel",
-        date: "February 25, 2020",
-        imgSrc: useUrl("../assets/images/album/angel.jpeg")
-    },
-    snowWaltz: {
-        id: 'snow',
-        name: "Snow Waltz",
-        date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/snow.jpeg")
-    },
-    ethernalReturn: {
-        id: 'ethernal',
-        name: "Ethernal Return",
-        date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/ethernal.jpeg")
-    },
-    whatif: {
-        id: 'whatif',
-        name: "What if",
-        date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/whatif.jpeg")
+    caucasian: {
+        id: 'caucasian',
+        name: "Caucasian",
+        date: "October 23, 2022",
+        imgSrc: useUrl("../assets/images/album/caucasian.jpg"),
+        spotifyLink: "https://open.spotify.com/album/3J2cly1uU4PWkeIGbF4sVC?si=m1tlh9wtTBiWPJ7Z0dOIXQ",
+        youtubeLink: "https://www.youtube.com/watch?v=L0msi18dmt4",
+        deezerLink: "https://deezer.page.link/pFHC6igHsBdqpe5EA",
+        amazonLink: "https://music.amazon.com/albums/B0BKXJN2PB?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_iVEX649zUGZpAQF1su0WUel4E"
+
     },
     hengam: {
         id: 'hengam',
         name: "Hengam",
         date: "October 2, 2022",
-        imgSrc: useUrl("../assets/images/album/Hengam.jpeg")
+        imgSrc: useUrl("../assets/images/album/Hengam.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/06PJtoCHSpPUtdJ15yNm3G?si=CRGkeNmDQwSpG1BVdRcjaQ",
+        youtubeLink: "https://www.youtube.com/watch?v=qHeniqVumdM",
+        deezerLink: "https://deezer.page.link/buUDprW1K6KHnhWc6",
+        amazonLink: "https://music.amazon.com/albums/B0BH38B2JW?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_FZ7mmild457QFtkTbYVDur5lR"
+
     },
-    caucasian: {
-        id: 'caucasian',
-        name: "Caucasian",
-        date: "October 23, 2022",
-        imgSrc: useUrl("../assets/images/album/Hengam.jpeg")
-    }
+    snowWaltz: {
+        id: 'snow',
+        name: "Snow Waltz",
+        date: "September 9, 2021",
+        imgSrc: useUrl("../assets/images/album/snow.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/6MykWxfKUsQkLNZOdV55TX?si=FaG0TtrDRv-zzIYvbhecdQ",
+        youtubeLink: "https://www.youtube.com/watch?v=3BDn7FmlWfs",
+        deezerLink: "https://deezer.page.link/YMjaXYnmbvUuPXMA9",
+        amazonLink: "https://music.amazon.com/albums/B0BFJL85WV?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_8XJGyegltjUfiJ3DHdV1seBp2"
+
+    },
+    ethernalReturn: {
+        id: 'ethernal',
+        name: "Ethernal Return",
+        date: "September 9, 2021",
+        imgSrc: useUrl("../assets/images/album/ethernal.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/7rehxituLcidvHpsIAK2dd?si=tRqFqc0MQtGIBG_t5u1xcg",
+        youtubeLink: "https://www.youtube.com/watch?v=JBbBVlUzM4c",
+        deezerLink: "https://deezer.page.link/K5t9wqx4jBaNHuwM8",
+        amazonLink: "https://music.amazon.com/albums/B0BFJL4D6T?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_JJCGK2M1sbpKuy4RcGLnpW3TT"
+    },
+    whatif: {
+        id: 'whatif',
+        name: "What if",
+        date: "September 9, 2021",
+        imgSrc: useUrl("../assets/images/album/whatif.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/1uzJxIBPdZoBDbcb3ChvVR?si=zyPXOnK1T8uFXUMJBHxAig",
+        youtubeLink: "https://www.youtube.com/watch?v=vJgiw46x-1w",
+        deezerLink: "https://deezer.page.link/GSPRHyzwG788qTmM9",
+        amazonLink: "https://music.amazon.com/albums/B0BFJMGY7W?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_q8QjcXqTCroYZw4FngEJOC189"
+
+    },
+
+    angel: {
+        id: 'angel',
+        name: "The Angel",
+        date: "February 25, 2020",
+        imgSrc: useUrl("../assets/images/album/angel.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/0RLQ00SKB5nGkMnUdpgKDL?si=3jt8TQ0CT6KBOkhZQc4h2w",
+        youtubeLink: "https://www.youtube.com/watch?v=z90wYc70cbQ",
+        deezerLink: "https://deezer.page.link/o5a61UmQ9duptnUy9",
+        amazonLink: "https://music.amazon.com/albums/B0BFJKCSWV?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_2EjUH0uKe7ot2RrlgqbtlCORR"
+
+    },
 
 })
 const isListOpen = ref(false)
@@ -69,14 +99,20 @@ function onItemListClick() {
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
-        <AlbumComponent :id="albums.angel.id" :name="albums.angel.name" :date="albums.angel.date"
-            :image="albums.angel.imgSrc">
+        <AlbumComponent :id="albums.hengam.id" :name="albums.hengam.name" :date="albums.hengam.date"
+            :image="albums.hengam.imgSrc">
             <template #mainDescription>
-                <p>Inspired by Sergei Rachmaninoff Étude-tableaux Op. 39 No.5</p>
+                <p class="farsi">الهام گرفته‌شده از ساحلی با شن‌های سرخ به نام هرمز، و آرامش جزیره‌ی هنگام، که در جنوب
+                    ایران قرار دارند. این قطعه متشکل از دو قسمت است، که قسمت اول آن prelude می‌باشد. </p>
+            </template>
+            <template #translate>
+                <p>Inspired by the red sand beach called Hormuz, and the calmness of Hengam Island, which are located in
+                    the south of Iran. This piece consists of two parts, the first part is the prelude. </p>
+
             </template>
             <template #listen>
-                <MusicLinkBox spotify="https://open.spotify.com/album/6MykWxfKUsQkLNZOdV55TX?si=dNpTMb98QwWyDTbwhd7nmg"
-                    youtube="https://youtu.be/3BDn7FmlWfs" />
+                <MusicLinkBox :spotify="albums.hengam.spotifyLink" :youtube="albums.hengam.youtubeLink"
+                    :deezer="albums.hengam.deezerLink" :amazon="albums.hengam.amazonLink" />
             </template>
         </AlbumComponent>
         <AlbumComponent :id="albums.snowWaltz.id" :name="albums.snowWaltz.name" :date="albums.snowWaltz.date"
@@ -95,8 +131,8 @@ function onItemListClick() {
 
             </template>
             <template #listen>
-                <MusicLinkBox spotify="https://open.spotify.com/album/6MykWxfKUsQkLNZOdV55TX?si=dNpTMb98QwWyDTbwhd7nmg"
-                    youtube="https://youtu.be/3BDn7FmlWfs" />
+                <MusicLinkBox :spotify="albums.snowWaltz.spotifyLink" :youtube="albums.snowWaltz.youtubeLink"
+                    :deezer="albums.snowWaltz.deezerLink" :amazon="albums.snowWaltz.amazonLink" />
             </template>
         </AlbumComponent>
         <AlbumComponent :id="albums.ethernalReturn.id" :name="albums.ethernalReturn.name"
@@ -164,8 +200,28 @@ function onItemListClick() {
 
             </template>
             <template #listen>
-                <MusicLinkBox spotify="https://open.spotify.com/album/7rehxituLcidvHpsIAK2dd?si=BjXkYhXbRiCb3DsgzziXNQ"
-                    youtube="https://youtu.be/JBbBVlUzM4c" />
+                <MusicLinkBox :spotify="albums.ethernalReturn.spotifyLink" :youtube="albums.ethernalReturn.youtubeLink"
+                    :deezer="albums.ethernalReturn.deezerLink" :amazon="albums.ethernalReturn.amazonLink" />
+            </template>
+        </AlbumComponent>
+        <AlbumComponent :id="albums.whatif.id" :name="albums.whatif.name" :date="albums.whatif.date"
+            :image="albums.whatif.imgSrc">
+            <template #mainDescription>
+                <p>Inspired by Franz Liszt, Consolation Nr.3</p>
+            </template>
+            <template #listen>
+                <MusicLinkBox :spotify="albums.whatif.spotifyLink" :youtube="albums.whatif.youtubeLink"
+                    :deezer="albums.whatif.deezerLink" :amazon="albums.whatif.amazonLink" />
+            </template>
+        </AlbumComponent>
+        <AlbumComponent :id="albums.angel.id" :name="albums.angel.name" :date="albums.angel.date"
+            :image="albums.angel.imgSrc">
+            <template #mainDescription>
+                <p>Inspired by Sergei Rachmaninoff Étude-tableaux Op. 39 No.5</p>
+            </template>
+            <template #listen>
+                <MusicLinkBox :spotify="albums.angel.spotifyLink" :youtube="albums.angel.youtubeLink"
+                    :deezer="albums.angel.deezerLink" :amazon="albums.angel.amazonLink" />
             </template>
         </AlbumComponent>
     </main>

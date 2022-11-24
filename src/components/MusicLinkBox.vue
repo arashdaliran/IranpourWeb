@@ -4,11 +4,13 @@ import { ref } from '@vue/reactivity';
 const props = defineProps({
     spotify: URL,
     deezer: URL,
-    youtube: URL
+    youtube: URL,
+    amazon : URL
 })
 const hasSpotify = ref(props.spotify != undefined)
 const hasDeezer = ref(props.deezer != undefined)
 const hasYoutube = ref(props.youtube != undefined)
+const hasAmazon = ref(props.amazon != undefined)
 </script>
 
 <template>
@@ -23,6 +25,9 @@ const hasYoutube = ref(props.youtube != undefined)
             </a>
             <a v-if="hasYoutube" :href="props.youtube" target="_blank">
                 <img src="../assets/images/youtubeDark.svg" />
+            </a>
+            <a v-if="hasAmazon" :href="props.amazon" target="_blank">
+                <img src="../assets/images/amazon-music.svg" />
             </a>
         </div>
     </div>
