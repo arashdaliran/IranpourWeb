@@ -99,6 +99,22 @@ function onItemListClick() {
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
+        <AlbumComponent :id="albums.caucasian.id" :name="albums.caucasian.name" :date="albums.caucasian.date"
+            :image="albums.caucasian.imgSrc">
+            <template #mainDescription>
+                <p class="farsi">این قطعه شاملِ فضای فولک-محلیِ قفقازی می‌باشد. با شنیدن این قطعه می‌توان متصور جشن‌های
+                    محلی و طبیعت بکر این مناطق شد.</p>
+            </template>
+            <template #translate>
+                <p>This piece contains the local-folk atmosphere of Caucasian music. After listening to this piece, the
+                    local celebrations and the pristine nature of this area can be imagined.</p>
+
+            </template>
+            <template #listen>
+                <MusicLinkBox :spotify="albums.caucasian.spotifyLink" :amazon="albums.caucasian.amazonLink" :youtube="albums.caucasian.youtubeLink"
+                :deezer="albums.caucasian.deezerLink" />
+            </template>
+        </AlbumComponent>
         <AlbumComponent :id="albums.hengam.id" :name="albums.hengam.name" :date="albums.hengam.date"
             :image="albums.hengam.imgSrc">
             <template #mainDescription>

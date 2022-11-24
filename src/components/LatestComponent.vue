@@ -6,15 +6,23 @@ const vp = useViewport()
 
 <template>
     <main>
-        <h2 :class="{biggerFont: !vp.isMobile }">Latest Singles</h2>
-        <a :class="{ albumDesktop: !vp.isMobile }" href="/musics">
+        <h2 :class="{ biggerFont: !vp.isMobile }">Latest Singles</h2>
+        <a :class="{ albumDesktop: !vp.isMobile }" href="/musics#caucasian">
+            <img class="albumImage" src="../assets/images/album/caucasian.jpg" />
+            <h3 class="marginWithFoto">Caucasian</h3>
+            <h4 class="marginWithFoto">2022</h4>
+            <p class="marginWithFoto">This piece contains the local-folk atmosphere of Caucasian music. After listening
+                to this piece, the local celebrations and the pristine nature of this area can be imagined. </p>
+        </a>
+        <a :class="{ albumDesktop: !vp.isMobile }" href="/musics#hengam">
             <img class="albumImage" src="../assets/images/album/Hengam.jpeg" />
             <h3 class="marginWithFoto">Hengam</h3>
             <h4 class="marginWithFoto">2020</h4>
-            <p class="marginWithFoto" >Inspired by the red sand beach called Hormuz, and the calmness of
+            <p class="marginWithFoto">Inspired by the red sand beach called Hormuz, and the calmness of
                 Hengam Island, which are located in the south of Iran. This piece consists of two parts, the first part
                 is the prelude. </p>
         </a>
+
         <!-- <h2>Latest Album</h2>
         <img class="albumImage" src="../assets/images/album/Hengam.jpeg" /> -->
     </main>
@@ -44,7 +52,6 @@ h2 {
     text-overflow: ellipsis;
 }
 
-
 .albumImage {
     display: block;
     width: 90%;
@@ -53,8 +60,9 @@ h2 {
 
 
 .albumDesktop {
-    padding-right: 0;
+    padding: 10px;
     margin-right: 0;
+    display: inline-block;
 
     >img {
         padding-left: 20px;
@@ -62,8 +70,11 @@ h2 {
         float: left;
     }
 
-    >h3 , h4, p {
+    >h3,
+    h4,
+    p {
         padding-left: 10vmin;
+        padding-bottom: 20px;
         text-align: left;
         width: auto;
     }
