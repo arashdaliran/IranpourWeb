@@ -94,7 +94,7 @@ function onItemListClick() {
 </script>
 
 <template>
-    <NavigationBar class="mobileNav" :opBtnImage="albumsButtonImage"
+    <NavigationBar class="mobileNav" :class="{desktopNav : vp.isDesktop}" :opBtnImage="albumsButtonImage"
         @on-option-btn-click="toggleAlbumsList()" />
 
     <aside class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop }">
@@ -269,6 +269,10 @@ function onItemListClick() {
 
 .listCollapse {
     max-width: 0;
+}
+.desktopNav{
+    padding: 0;
+    margin: 0;
 }
 
 .mobileNav {

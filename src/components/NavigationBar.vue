@@ -17,7 +17,7 @@ function toggleNavMenu() {
     isArtworksOpen.value = false
     isNavMenuOpen.value = !isNavMenuOpen.value
 }
-const menuButtonImage = computed(()=>{
+const menuButtonImage = computed(() => {
     return isNavMenuOpen.value ? useUrl("../assets/images/close.svg") : useUrl("../assets/images/menu.svg")
 })
 let isArtworksOpen = ref(false)
@@ -30,28 +30,25 @@ function toggleArtworksMenu() {
 
 <template>
     <header>
-        <div class="appBar" :class="{appBarDesktop : !vp.isMobile}">
-            <button v-show="hasExtraButton" style="margin-right: 10px;"
-                @click="$emit('onOptionBtnClick')">
-                <img class="extraBtnImg" :src="props.opBtnImage"
-                style="height: 40px; width: 40px; padding: 8px;" />
+        <div class="appBar" :class="{ appBarDesktop: !vp.isMobile }">
+            <button v-show="hasExtraButton" style="margin-right: 10px;" @click="$emit('onOptionBtnClick')">
+                <img class="extraBtnImg" :src="props.opBtnImage" />
             </button>
             <h1>Alireza Iranpour</h1>
             <button class="menuButton" @click="toggleNavMenu()">
                 <img :src="menuButtonImage" />
             </button>
         </div>
-        <nav class="navigationMenu" :class="{navMenuDesktop : !vp.isMobile}">
+        <nav class="navigationMenu" :class="{ navMenuDesktop: !vp.isMobile }">
             <button v-show="hasExtraButton && vp.isTablet" style="margin-right: 10px;"
                 @click="$emit('onOptionBtnClick')">
-                <img class="extraBtnImg" :src="props.opBtnImage"
-                style="height: 40px; width: 40px; padding: 8px;" />
+                <img class="extraBtnImg" :src="props.opBtnImage" />
             </button>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
-            <button @click="toggleArtworksMenu()" :class="{artDesktop : !vp.isMobile}">
+            <button @click="toggleArtworksMenu()" :class="{ artDesktop: !vp.isMobile }">
                 <img src="../assets/images/expand-arrow-64.png" style="height:20px;"
-                    :class="{arrow : isArtworksOpen}" />
+                    :class="{ arrow: isArtworksOpen }" />
                 Artworks
             </button>
             <div v-if="isArtworksOpen && vp.isMobile" id="artworksMenuMobile">
@@ -62,7 +59,7 @@ function toggleArtworksMenu() {
             <RouterLink to="/gallery">Gallery</RouterLink>
             <RouterLink to="#footer" @click="toggleNavMenu()">Contacts</RouterLink>
         </nav>
-        <div v-if="isArtworksOpen && !vp.isMobile" class="artworksDesktop">
+        <div v-show="isArtworksOpen && !vp.isMobile" class="artworksDesktop">
             <RouterLink to="/musics">Musics</RouterLink>
             <RouterLink to="/quotes">Quotes</RouterLink>
             <RouterLink to="/concerts">Concerts</RouterLink>
@@ -84,17 +81,17 @@ function toggleArtworksMenu() {
 
     .menuButton {
         margin: 10px;
-        > img{
+
+        >img {
             height: 40px;
             width: 45px;
         }
     }
 }
-.extraBtnImg{
-    // height: 48px;
-    // width: 48px;
-    object-fit: cover;
-}
+
+// .extraBtnImg{
+//     object-fit: cover;
+// }
 .appBarDesktop {
     display: none;
 }
@@ -122,12 +119,20 @@ function toggleArtworksMenu() {
     }
 }
 
+.extraBtnImg {
+    height: 34px;
+    width: 34px;
+    padding: 6px;
+    margin-top: 4px;
+}
+
 .navMenuDesktop {
     max-height: 100px;
     flex-direction: row;
     justify-content: space-around;
     max-width: 600px;
     margin: auto;
+
     .artDesktop {
         display: flex;
         flex-direction: row;
@@ -139,6 +144,7 @@ function toggleArtworksMenu() {
         width: auto;
     }
 }
+
 #artworksMenuMobile {
     display: flex;
     flex-direction: column;
@@ -161,7 +167,8 @@ function toggleArtworksMenu() {
     flex-direction: row;
 
     >* {
-        padding: 10px;
+        padding: 6px;
+        font-size: larger;
     }
 }
 </style>

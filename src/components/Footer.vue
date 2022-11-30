@@ -37,6 +37,7 @@ import { useViewport } from '../plugins/NoobiesQueries';
 .footer {
     position: relative;
     margin-top: 15px;
+    z-index: 100;
 }
 .title{
     text-align: center;
