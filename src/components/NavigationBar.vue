@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useViewport } from '../plugins/NoobiesQueries';
+import { useUrl } from '../plugins/NoobiesUrlMaker';
 
 const props = defineProps(['opBtnImage'])
 const hasExtraButton = ref(props.opBtnImage != undefined)
@@ -10,12 +11,15 @@ const hasExtraButton = ref(props.opBtnImage != undefined)
 
 const vp = useViewport()
 let navigationMenuHeight = ref('0px')
-let isNavMenuOpen = false
+let isNavMenuOpen = ref(false)
 function toggleNavMenu() {
-    navigationMenuHeight.value = isNavMenuOpen ? '0px' : '800px'
+    navigationMenuHeight.value = isNavMenuOpen.value ? '0px' : '800px'
     isArtworksOpen.value = false
-    isNavMenuOpen = !isNavMenuOpen
+    isNavMenuOpen.value = !isNavMenuOpen.value
 }
+const menuButtonImage = computed(()=>{
+    return isNavMenuOpen.value ? useUrl("../assets/images/close.svg") : useUrl("../assets/images/menu.svg")
+})
 let isArtworksOpen = ref(false)
 let artworksMenuHeight = ref('0px')
 function toggleArtworksMenu() {
@@ -34,7 +38,7 @@ function toggleArtworksMenu() {
             </button>
             <h1>Alireza Iranpour</h1>
             <button class="menuButton" @click="toggleNavMenu()">
-                <img src="../assets/images/menu.svg" />
+                <img :src="menuButtonImage" />
             </button>
         </div>
         <nav class="navigationMenu" :class="{navMenuDesktop : !vp.isMobile}">

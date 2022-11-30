@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from '@vue/reactivity';
 import { onMounted, reactive, ref } from 'vue';
 import AlbumComponent from '../components/AlbumComponent.vue';
 import AlbumListItem from '../components/AlbumListItem.vue';
@@ -81,7 +82,9 @@ const isListOpen = ref(false)
 function toggleAlbumsList() {
     isListOpen.value = !isListOpen.value
 }
-
+const albumsButtonImage = computed(()=>{
+    return isListOpen.value ?  useUrl('../assets/images/close.svg') : useUrl('../assets/images/vinyl.svg')
+})
 const items = ref([])
 function onItemListClick() {
 
@@ -91,7 +94,7 @@ function onItemListClick() {
 </script>
 
 <template>
-    <NavigationBar class="mobileNav" :opBtnImage="useUrl('../assets/images/vinyl.svg')"
+    <NavigationBar class="mobileNav" :opBtnImage="albumsButtonImage"
         @on-option-btn-click="toggleAlbumsList()" />
 
     <aside class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop }">
