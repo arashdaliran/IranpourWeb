@@ -43,11 +43,11 @@ const albums = reactive({
         amazonLink: "https://music.amazon.com/albums/B0BFJL85WV?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_8XJGyegltjUfiJ3DHdV1seBp2"
 
     },
-    ethernalReturn: {
-        id: 'ethernal',
-        name: "Ethernal Return",
+    eternalReturn: {
+        id: 'eternal',
+        name: "Eternal Return",
         date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/ethernal.jpeg"),
+        imgSrc: useUrl("../assets/images/album/eternal.jpeg"),
         spotifyLink: "https://open.spotify.com/album/7rehxituLcidvHpsIAK2dd?si=tRqFqc0MQtGIBG_t5u1xcg",
         youtubeLink: "https://www.youtube.com/watch?v=JBbBVlUzM4c",
         deezerLink: "https://deezer.page.link/K5t9wqx4jBaNHuwM8",
@@ -154,8 +154,8 @@ function onItemListClick() {
                     :deezer="albums.snowWaltz.deezerLink" :amazon="albums.snowWaltz.amazonLink" />
             </template>
         </AlbumComponent>
-        <AlbumComponent :id="albums.ethernalReturn.id" :name="albums.ethernalReturn.name"
-            :date="albums.ethernalReturn.date" :image="albums.ethernalReturn.imgSrc">
+        <AlbumComponent :id="albums.eternalReturn.id" :name="albums.eternalReturn.name"
+            :date="albums.eternalReturn.date" :image="albums.eternalReturn.imgSrc">
             <template #mainDescription>
                 <p class="farsi">چه می‌شود اگر روزی یا شبی یک دیو شما را در تنهاترین تنهایی شما بدزدد و به شما
                     بگوید:
@@ -219,8 +219,8 @@ function onItemListClick() {
 
             </template>
             <template #listen>
-                <MusicLinkBox :spotify="albums.ethernalReturn.spotifyLink" :youtube="albums.ethernalReturn.youtubeLink"
-                    :deezer="albums.ethernalReturn.deezerLink" :amazon="albums.ethernalReturn.amazonLink" />
+                <MusicLinkBox :spotify="albums.eternalReturn.spotifyLink" :youtube="albums.eternalReturn.youtubeLink"
+                    :deezer="albums.eternalReturn.deezerLink" :amazon="albums.eternalReturn.amazonLink" />
             </template>
         </AlbumComponent>
         <AlbumComponent :id="albums.whatif.id" :name="albums.whatif.name" :date="albums.whatif.date"
@@ -279,7 +279,7 @@ function onItemListClick() {
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: $appBarHeight;
+    // min-height: $appBarHeight;
     z-index: 1000;
 }
 
