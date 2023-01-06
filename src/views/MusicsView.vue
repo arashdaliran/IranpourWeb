@@ -5,6 +5,7 @@ import AlbumComponent from '../components/AlbumComponent.vue';
 import AlbumListItem from '../components/AlbumListItem.vue';
 import MusicLinkBox from '../components/MusicLinkBox.vue';
 import NavigationBar from '../components/NavigationBar.vue'
+import Seperator from '../components/Seperator.vue';
 import TrackComponent from '../components/TrackComponent.vue';
 import { useViewport } from '../plugins/NoobiesQueries';
 import { useUrl } from '../plugins/NoobiesUrlMaker';
@@ -118,6 +119,7 @@ function onItemListClick() {
                 :deezer="albums.caucasian.deezerLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.hengam.id" :name="albums.hengam.name" :date="albums.hengam.date"
             :image="albums.hengam.imgSrc">
             <template #mainDescription>
@@ -134,6 +136,7 @@ function onItemListClick() {
                     :deezer="albums.hengam.deezerLink" :amazon="albums.hengam.amazonLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.snowWaltz.id" :name="albums.snowWaltz.name" :date="albums.snowWaltz.date"
             :image="albums.snowWaltz.imgSrc">
             <template #mainDescription>
@@ -154,6 +157,7 @@ function onItemListClick() {
                     :deezer="albums.snowWaltz.deezerLink" :amazon="albums.snowWaltz.amazonLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.eternalReturn.id" :name="albums.eternalReturn.name"
             :date="albums.eternalReturn.date" :image="albums.eternalReturn.imgSrc">
             <template #mainDescription>
@@ -223,6 +227,7 @@ function onItemListClick() {
                     :deezer="albums.eternalReturn.deezerLink" :amazon="albums.eternalReturn.amazonLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.whatif.id" :name="albums.whatif.name" :date="albums.whatif.date"
             :image="albums.whatif.imgSrc">
             <template #mainDescription>
@@ -233,6 +238,7 @@ function onItemListClick() {
                     :deezer="albums.whatif.deezerLink" :amazon="albums.whatif.amazonLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.angel.id" :name="albums.angel.name" :date="albums.angel.date"
             :image="albums.angel.imgSrc">
             <template #mainDescription>
