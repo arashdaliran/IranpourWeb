@@ -52,6 +52,6 @@ h1 {
 
 }
 .desktopGrid{
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
 }
 </style>
