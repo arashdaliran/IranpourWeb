@@ -279,7 +279,6 @@ function onItemListClick() {
     position: fixed;
     top: 0;
     width: 100%;
-    // min-height: $appBarHeight;
     z-index: 1000;
 }
 
