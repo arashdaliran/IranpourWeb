@@ -26,10 +26,20 @@ function toggleArtworksMenu() {
     artworksMenuHeight.value = isArtworksOpen.value ? '0px' : '300px'
     isArtworksOpen.value = !isArtworksOpen.value
 }
+function openArtworksMenu() {
+    if (isArtworksOpen.value)
+        return
+    toggleArtworksMenu()
+}
+function closeArtworksMenu() {
+    if (!isArtworksOpen.value)
+        return
+    toggleArtworksMenu()
+}
 </script>
 
 <template>
-    <header>
+    <header @mouseleave="closeArtworksMenu()">
         <div class="appBar" :class="{ appBarDesktop: !vp.isMobile }">
             <button v-show="hasExtraButton" style="margin-right: 10px;" @click="$emit('onOptionBtnClick')">
                 <img class="extraBtnImg" :src="props.opBtnImage" />
@@ -46,7 +56,7 @@ function toggleArtworksMenu() {
             </button>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
-            <button @click="toggleArtworksMenu()" :class="{ artDesktop: !vp.isMobile }">
+            <button @mouseenter="openArtworksMenu()" @click="toggleArtworksMenu()" :class="{ artDesktop: !vp.isMobile }">
                 <img src="../assets/images/expand-arrow-64.png" style="height:20px;"
                     :class="{ arrow: isArtworksOpen }" />
                 Artworks
