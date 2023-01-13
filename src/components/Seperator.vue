@@ -4,7 +4,7 @@
 </template>
 <style scoped lang="scss">
     .seperator{
-    display: block;
+    display: flow-root;
     background-color: antiquewhite;
     width: 80%;
     height: 1.5px;
