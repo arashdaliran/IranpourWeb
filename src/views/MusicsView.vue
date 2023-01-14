@@ -1,13 +1,12 @@
 <script setup>
-import { computed } from '@vue/reactivity';
-import { onMounted, reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import AlbumComponent from '../components/AlbumComponent.vue';
 import AlbumListItem from '../components/AlbumListItem.vue';
 import MusicLinkBox from '../components/MusicLinkBox.vue';
 import NavigationBar from '../components/NavigationBar.vue'
 import Seperator from '../components/Seperator.vue';
 import TrackComponent from '../components/TrackComponent.vue';
-import { useViewport } from '../plugins/NoobiesQueries';
+import { useScroll, useViewport } from '../plugins/NoobiesQueries';
 import { useUrl } from '../plugins/NoobiesUrlMaker';
 const vp = useViewport()
 const albums = reactive({
@@ -88,17 +87,31 @@ const albumsButtonImage = computed(()=>{
 })
 const items = ref([])
 function onItemListClick() {
-
+    if(!isListOpen.value) return
     toggleAlbumsList()
-
 }
+const listHeightStyle = reactive({
+    height : window.innerHeight + 'px'
+})
+const appBarHeight = computed(()=>{
+    return vp.isMobile ? 60 : 35
+})
+useScroll(()=>{
+    let delta = window.innerHeight + window.scrollY - document.getElementById("footer").offsetTop
+    if(delta < 0){
+        delta = 0
+    }  
+    let listHeight = window.innerHeight - delta - appBarHeight.value
+    listHeightStyle.height = listHeight + 'px'
+})
 </script>
 
 <template>
     <NavigationBar class="mobileNav" :class="{desktopNav : vp.isDesktop}" :opBtnImage="albumsButtonImage"
         @on-option-btn-click="toggleAlbumsList()" />
 
-    <aside class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop,albumsListDesktop :vp.isDesktop }">
+    <aside id="albumList" class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop,albumsListDesktop :vp.isDesktop }"
+                    :style="listHeightStyle">
             <AlbumListItem ref="items" v-for="(item) in albums" :name="item.name" :date="item.date" :image="item.imgSrc"
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
@@ -262,7 +275,8 @@ function onItemListClick() {
     height: 100%;
     position: fixed;
     left: 0;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     top: $appBarHeight;
     transition: max-width 0.4s;
 
