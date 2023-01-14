@@ -20,13 +20,13 @@ const vp = useViewport()
     <div>
         <div :class="{ desktopView: vp.isDesktop }">
             <div>
-                <img :src="props.image" alt="Couldn't load album image !" />
-            </div>
-            <div>
                 <h3>{{ props.name }}</h3>
                 <h5>{{ props.date }}</h5>
                 <p v-if="vp.isDesktop"><br></p>
                 <slot v-if="vp.isDesktop" name="listen"></slot>
+            </div>
+            <div>
+                <img :src="props.image" alt="Couldn't load album image !" />
             </div>
         </div>
         <DescriptionBox :has-translate="hasTranslate">

@@ -6,7 +6,6 @@ const props = defineProps({
     hasTranslate : Boolean,
 })
 const isTranslateSelected = ref(false)
-console.log(props.hasTranslate);
 const vp = useViewport()
 </script>
 

@@ -27,7 +27,7 @@ function toggleArtworksMenu() {
     isArtworksOpen.value = !isArtworksOpen.value
 }
 function openArtworksMenu() {
-    if (isArtworksOpen.value)
+    if (isArtworksOpen.value || !vp.isDesktop)
         return
     toggleArtworksMenu()
 }
@@ -56,7 +56,9 @@ function closeArtworksMenu() {
             </button>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About</RouterLink>
-            <button @mouseenter="openArtworksMenu()" @click="toggleArtworksMenu()" :class="{ artDesktop: !vp.isMobile }">
+            <button @click="toggleArtworksMenu()" 
+                    @mouseenter="openArtworksMenu()"
+                    :class="{ artDesktop: !vp.isMobile }">
                 <img src="../assets/images/expand-arrow-64.png" style="height:20px;"
                     :class="{ arrow: isArtworksOpen }" />
                 Artworks

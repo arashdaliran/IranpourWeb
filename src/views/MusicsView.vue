@@ -98,8 +98,8 @@ function onItemListClick() {
     <NavigationBar class="mobileNav" :class="{desktopNav : vp.isDesktop}" :opBtnImage="albumsButtonImage"
         @on-option-btn-click="toggleAlbumsList()" />
 
-    <aside class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop }">
-        <AlbumListItem ref="items" v-for="(item) in albums" :name="item.name" :date="item.date" :image="item.imgSrc"
+    <aside class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop,albumsListDesktop :vp.isDesktop }">
+            <AlbumListItem ref="items" v-for="(item) in albums" :name="item.name" :date="item.date" :image="item.imgSrc"
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
@@ -262,7 +262,7 @@ function onItemListClick() {
     height: 100%;
     position: fixed;
     left: 0;
-    overflow: hidden;
+    overflow: scroll;
     top: $appBarHeight;
     transition: max-width 0.4s;
 
@@ -271,6 +271,9 @@ function onItemListClick() {
         margin-top: 20px;
 
     }
+}
+.albumsListDesktop{
+    top: 30px;
 }
 
 .listCollapse {
