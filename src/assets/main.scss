@@ -115,3 +115,22 @@ a:hover,
   button:active {
     background-color: $clickedColor ;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #2e2e2e; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $selectedBgColor; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $clickedColor; 
+  }
