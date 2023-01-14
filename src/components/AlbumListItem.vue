@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 <template>
 
-    <RouterLink class="parent" @click="$emit('onItemClick')" :to="{ name: 'musics', hash: `#${props.id}` }">
+    <RouterLink :id="props.id + '_'" class="parent" @click="$emit('onItemClick')" :to="{ name: 'musics', hash: `#${props.id}` }">
         <img :src="props.image" style="width: 50px; height: 50px;float: left;" alt="abc" />
         <h4>{{ props.name }}</h4>
         <h5>{{ props.date }}</h5>

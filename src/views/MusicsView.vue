@@ -1,5 +1,5 @@
 <script setup>
-import { computed, reactive, ref } from 'vue';
+import { onMounted, computed, reactive, ref } from 'vue';
 import AlbumComponent from '../components/AlbumComponent.vue';
 import AlbumListItem from '../components/AlbumListItem.vue';
 import MusicLinkBox from '../components/MusicLinkBox.vue';
@@ -82,37 +82,60 @@ const isListOpen = ref(false)
 function toggleAlbumsList() {
     isListOpen.value = !isListOpen.value
 }
-const albumsButtonImage = computed(()=>{
-    return isListOpen.value ?  useUrl('../assets/images/close.svg') : useUrl('../assets/images/vinyl.svg')
+const albumsButtonImage = computed(() => {
+    return isListOpen.value ? useUrl('../assets/images/close.svg') : useUrl('../assets/images/vinyl.svg')
 })
 const items = ref([])
 function onItemListClick() {
-    if(!isListOpen.value) return
+    if (!isListOpen.value) return
     toggleAlbumsList()
 }
 const listHeightStyle = reactive({
-    height : window.innerHeight + 'px'
+    height: window.innerHeight + 'px'
 })
-const appBarHeight = computed(()=>{
+const appBarHeight = computed(() => {
     return vp.isMobile ? 60 : 35
 })
-useScroll(()=>{
-    let delta = window.innerHeight + window.scrollY - document.getElementById("footer").offsetTop
-    if(delta < 0){
+const footer = document.getElementById("footer")
+useScroll(() => {
+    let delta = window.innerHeight + window.scrollY - footer.offsetTop
+    if (delta < 0) {
         delta = 0
-    }  
+    }
     let listHeight = window.innerHeight - delta - appBarHeight.value
     listHeightStyle.height = listHeight + 'px'
 })
+
+useScroll(() => {
+    Object.keys(albums).forEach(key => {
+        const albumId = albums[key].id
+        const top = document.getElementById(albumId).offsetTop
+        
+        if (window.scrollY > (top - 85)) {
+            items.value.forEach(item => {
+                const element = item.$el
+                element.style.backgroundColor = "#332e28"
+                if (element.id == albumId + "_") {
+                    element.style.backgroundColor = "#948a73"
+                }
+            })
+            return
+        }
+    })
+})
+function selectAlbumInList(albumId) {
+
+}
 </script>
 
 <template>
-    <NavigationBar class="mobileNav" :class="{desktopNav : vp.isDesktop}" :opBtnImage="albumsButtonImage"
+    <NavigationBar class="mobileNav" :class="{ desktopNav: vp.isDesktop }" :opBtnImage="albumsButtonImage"
         @on-option-btn-click="toggleAlbumsList()" />
 
-    <aside id="albumList" class="albumsList" :class="{ listCollapse: !isListOpen && !vp.isDesktop,albumsListDesktop :vp.isDesktop }"
-                    :style="listHeightStyle">
-            <AlbumListItem ref="items" v-for="(item) in albums" :name="item.name" :date="item.date" :image="item.imgSrc"
+    <aside id="albumList" class="albumsList"
+        :class="{ listCollapse: !isListOpen && !vp.isDesktop, albumsListDesktop: vp.isDesktop }"
+        :style="listHeightStyle">
+        <AlbumListItem ref="items" v-for="(item) in albums" :name="item.name" :date="item.date" :image="item.imgSrc"
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
@@ -128,8 +151,8 @@ useScroll(()=>{
 
             </template>
             <template #listen>
-                <MusicLinkBox :spotify="albums.caucasian.spotifyLink" :amazon="albums.caucasian.amazonLink" :youtube="albums.caucasian.youtubeLink"
-                :deezer="albums.caucasian.deezerLink" />
+                <MusicLinkBox :spotify="albums.caucasian.spotifyLink" :amazon="albums.caucasian.amazonLink"
+                    :youtube="albums.caucasian.youtubeLink" :deezer="albums.caucasian.deezerLink" />
             </template>
         </AlbumComponent>
         <Seperator />
@@ -286,14 +309,16 @@ useScroll(()=>{
 
     }
 }
-.albumsListDesktop{
+
+.albumsListDesktop {
     top: 30px;
 }
 
 .listCollapse {
     max-width: 0;
 }
-.desktopNav{
+
+.desktopNav {
     padding: 0;
     margin: 0;
 }
