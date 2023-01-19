@@ -1,6 +1,6 @@
 <script setup>
 import NavigationBar from '../components/NavigationBar.vue';
-import { useViewport } from '../plugins/NoobiesQueries';
+import { useViewport } from '../composables/NoobiesQueries';
 import LatestComponent from '../components/LatestComponent.vue';
 
 const vp = useViewport()
@@ -14,6 +14,7 @@ const vFontSizer = {
 
 }
 
+window.scrollTo(0,0)
 </script>
 
 <template>

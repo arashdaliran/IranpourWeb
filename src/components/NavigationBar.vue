@@ -1,8 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useViewport } from '../plugins/NoobiesQueries';
-import { useUrl } from '../plugins/NoobiesUrlMaker';
+import { useViewport } from '../composables/NoobiesQueries';
+import { useUrl } from '../composables/NoobiesUrlMaker';
 
 const props = defineProps(['opBtnImage'])
 const hasExtraButton = ref(props.opBtnImage != undefined)

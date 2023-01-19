@@ -3,104 +3,106 @@ import FotosComponent from '../components/FotosComponent.vue';
 import NavigationBar from '../components/NavigationBar.vue'
 const teachingStylImages = [
     {
-        address: "../assets/images/Concerts/IUT2016/1.JPG",
+        address: "images/Concerts/IUT2016/1.jpg",
         pos: "100% 0%"
     },
     {
-        address: "../assets/images/Concerts/IUT2016/2.JPG",
+        address: "images/Concerts/IUT2016/2.jpg",
         pos: "70% 50%"
     },
 ]
 const naghme2016Images = [
     {
-        address: "../assets/images/Concerts/Naghmeh2016/1.JPG",
+        address: "images/Concerts/Naghmeh2016/1.jpg",
         pos: "100% 0%"
     },
     {
-        address: "../assets/images/Concerts/Naghmeh2016/2.JPG",
+        address: "images/Concerts/Naghmeh2016/2.jpg",
         pos: "0% 0%"
     },
     {
-        address: "../assets/images/Concerts/Naghmeh2016/3.JPG",
+        address: "images/Concerts/Naghmeh2016/3.jpg",
         pos: "30% 0%"
     },
     {
-        address: "../assets/images/Concerts/Naghmeh2016/4.JPG",
+        address: "images/Concerts/Naghmeh2016/4.jpg",
         pos: "100% 0%"
     },
 ]
 const imm2017Images = [
     {
-        address: "../assets/images/Concerts/IMM2017/1.jpg",
+        address: "images/Concerts/IMM2017/1.jpg",
         pos: "100% 0%"
     },
 ]
 const yalda01Images = [
     {
-        address: "../assets/images/Concerts/Yalda2017/1.JPG",
+        address: "images/Concerts/Yalda2017/1.jpg",
         pos: "40% 0%"
     },
     {
-        address: "../assets/images/Concerts/Yalda2017/2.JPG",
+        address: "images/Concerts/Yalda2017/2.jpg",
         pos: "30% 0%"
     },
 ]
 const yalda02Images = [
     {
-        address: "../assets/images/Concerts/YaldaFest2017/1.JPG",
+        address: "images/Concerts/YaldaFest2017/1.jpg",
         pos: "50% 0%"
     },
     {
-        address: "../assets/images/Concerts/YaldaFest2017/2.JPG",
+        address: "images/Concerts/YaldaFest2017/2.jpg",
         pos: "100% 0%"
     },
 ]
 const avandMui2017Images = [
     {
-        address: "../assets/images/Concerts/AvandMUI2017/1.jpg",
+        address: "images/Concerts/AvandMUI2017/1.jpg",
         pos: "40% 0%"
     },
 ]
 const iut2018Images = [
     {
-        address: "../assets/images/Concerts/IUT2018/1.jpg",
+        address: "images/Concerts/IUT2018/1.jpg",
         pos: "80% 0%"
     },
 ]
 const street2018Images = [
     {
-        address: "../assets/images/Concerts/StreetIUT2018/1.jpg",
+        address: "images/Concerts/StreetIUT2018/1.jpg",
         pos: "60% 0%"
     },
     {
-        address: "../assets/images/Concerts/StreetIUT2018/2.jpg",
+        address: "images/Concerts/StreetIUT2018/2.jpg",
         pos: "40% 0%"
     },
     {
-        address: "../assets/images/Concerts/StreetIUT2018/3.jpg",
+        address: "images/Concerts/StreetIUT2018/3.jpg",
         pos: "40% 0%"
     },
 ]
 const naghme2018Images = [
     {
-        address: "../assets/images/Concerts/Naghmeh2018/1.jpg",
+        address: "images/Concerts/Naghmeh2018/1.jpg",
         pos: "20% 0%"
     },
     {
-        address: "../assets/images/Concerts/Naghmeh2018/2.jpg",
+        address: "images/Concerts/Naghmeh2018/2.jpg",
         pos: "50% 0%"
     },
 ]
 const iut2019Images =[
 {
-        address: "../assets/images/Concerts/IUT2019/1.jpg",
+        address: "images/Concerts/IUT2019/1.jpg",
         pos: "50% 0%"
     },
     {
-        address: "../assets/images/Concerts/IUT2019/2.jpg",
+        address: "images/Concerts/IUT2019/2.jpg",
         pos: "60% 0%"
     },
 ]
+
+window.scrollTo(0,0)
 </script>
 <template>
     <NavigationBar class="navbar" />

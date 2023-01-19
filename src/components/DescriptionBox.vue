@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { useViewport } from '../plugins/NoobiesQueries';
+import { useViewport } from '../composables/NoobiesQueries';
 const emit = defineEmits('isTranslate')
 const props = defineProps({
     hasTranslate : Boolean,

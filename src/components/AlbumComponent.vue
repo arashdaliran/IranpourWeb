@@ -1,6 +1,6 @@
 <script setup>
 import DescriptionBox from './DescriptionBox.vue';
-import { useViewport } from '../plugins/NoobiesQueries';
+import { useViewport } from '../composables/NoobiesQueries';
 import { onMounted ,useSlots } from 'vue';
 import { computed } from '@vue/reactivity';
 const props = defineProps({

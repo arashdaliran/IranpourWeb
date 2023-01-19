@@ -1,5 +1,5 @@
 <script setup>
-import { useViewport } from '../plugins/NoobiesQueries';
+import { useViewport } from '../composables/NoobiesQueries';
 
 const vp = useViewport()
 </script>

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { useViewport } from '../plugins/NoobiesQueries';
-import { useUrl } from '../plugins/NoobiesUrlMaker';
+import { useViewport } from '../composables/NoobiesQueries';
+import { useUrl } from '../composables/NoobiesUrlMaker';
 const vp = useViewport()
 const props = defineProps({
     images: Array

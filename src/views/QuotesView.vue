@@ -2,6 +2,8 @@
 import NavigationBar from '../components/NavigationBar.vue';
 import QuoteComponent from '../components/QuoteComponent.vue';
 import Seperator from '../components/Seperator.vue';
+
+window.scrollTo(0,0)
 </script>
 
 <template>
@@ -46,7 +48,7 @@ import Seperator from '../components/Seperator.vue';
                 طنابی که بوسید من را، از منِ تَرَک‌خورده‌ی لای تَرَک سردِ دیوار.</p>
         </QuoteComponent>
         <Seperator />
-        <QuoteComponent img="..\assets\images\Quotes\winter-01.jpg">
+        <QuoteComponent img="images/Quotes/winter01.jpg">
             <p class="farsi">من تو را ندیدم، من تورا بوییدم، من تورا چشیدم، من تورا گرییدم، من تورا بوییدم.<br>
                 در گلدان اطلسی من تورا کاشتم. من تورا به تمام دیوارهای شهر پوشیدم. آسمان من بارید، بر زمین بنشست برف؛ من
                 تورا خوابیدم.
@@ -55,7 +57,7 @@ import Seperator from '../components/Seperator.vue';
             </p>
         </QuoteComponent>
         <Seperator />
-        <QuoteComponent img="..\assets\images\Quotes\tree-01.jpg">
+        <QuoteComponent img="images/Quotes/tree01.jpg">
             <p class="farsi">خاک می‌خواند آب را<br>
                 بر زمین، زمزمه‌ی سرود باران<br>
                 برگ‌ها می‌شویند غبار از تن، پَرهاشان را<br>
@@ -78,7 +80,7 @@ import Seperator from '../components/Seperator.vue';
                 من دیوانه نیستم، می‌رفته‌بودم.</p>
         </QuoteComponent>
         <Seperator />
-        <QuoteComponent img="..\assets\images\Quotes\fifi-room.jpg">
+        <QuoteComponent img="images/Quotes/fifiRoom.jpg">
             <p class="farsi">فیفیِ من!<br>
                 تو هم داری این‌ها را نگاه می‌کنی؟<br>
                 چقدر مُرده‌اند. از نگاهشان بوی گند لاشه‌شان دارد هجوم می‌آورد.<br>
@@ -103,7 +105,7 @@ import Seperator from '../components/Seperator.vue';
                 این‌ها خیلی کم است. ساعت تقریبا خیلی گذشته است. مثل همیشه، اهمیتی هم ندارد.</p>
         </QuoteComponent>
         <Seperator />
-        <QuoteComponent img="..\assets\images\Quotes\mohases-01.jpg">
+        <QuoteComponent img="images/Quotes/mohases01.jpg">
             <p class="farsi">
                 و چقدر خوشبختم، که صدایت چون بوی شراب کهنه خانگی در مشامم است.
             </p>

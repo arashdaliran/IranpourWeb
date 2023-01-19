@@ -6,15 +6,15 @@ import MusicLinkBox from '../components/MusicLinkBox.vue';
 import NavigationBar from '../components/NavigationBar.vue'
 import Seperator from '../components/Seperator.vue';
 import TrackComponent from '../components/TrackComponent.vue';
-import { useScroll, useViewport } from '../plugins/NoobiesQueries';
-import { useUrl } from '../plugins/NoobiesUrlMaker';
+import { useScroll, useViewport } from '../composables/NoobiesQueries';
+import { useUrl } from '../composables/NoobiesUrlMaker';
 const vp = useViewport()
 const albums = reactive({
     caucasian: {
         id: 'caucasian',
         name: "Caucasian",
         date: "October 23, 2022",
-        imgSrc: useUrl("../assets/images/album/caucasian.jpg"),
+        imgSrc: useUrl("images/album/caucasian.jpg"),
         spotifyLink: "https://open.spotify.com/album/3J2cly1uU4PWkeIGbF4sVC?si=m1tlh9wtTBiWPJ7Z0dOIXQ",
         youtubeLink: "https://www.youtube.com/watch?v=L0msi18dmt4",
         deezerLink: "https://deezer.page.link/pFHC6igHsBdqpe5EA",
@@ -25,7 +25,7 @@ const albums = reactive({
         id: 'hengam',
         name: "Hengam",
         date: "October 2, 2022",
-        imgSrc: useUrl("../assets/images/album/Hengam.jpeg"),
+        imgSrc: useUrl("images/album/Hengam.jpeg"),
         spotifyLink: "https://open.spotify.com/album/06PJtoCHSpPUtdJ15yNm3G?si=CRGkeNmDQwSpG1BVdRcjaQ",
         youtubeLink: "https://www.youtube.com/watch?v=qHeniqVumdM",
         deezerLink: "https://deezer.page.link/buUDprW1K6KHnhWc6",
@@ -36,7 +36,7 @@ const albums = reactive({
         id: 'snow',
         name: "Snow Waltz",
         date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/snow.jpeg"),
+        imgSrc: useUrl("images/album/snow.jpeg"),
         spotifyLink: "https://open.spotify.com/album/6MykWxfKUsQkLNZOdV55TX?si=FaG0TtrDRv-zzIYvbhecdQ",
         youtubeLink: "https://www.youtube.com/watch?v=3BDn7FmlWfs",
         deezerLink: "https://deezer.page.link/YMjaXYnmbvUuPXMA9",
@@ -47,7 +47,7 @@ const albums = reactive({
         id: 'eternal',
         name: "Eternal Return",
         date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/eternal.jpeg"),
+        imgSrc: useUrl("images/album/eternal.jpeg"),
         spotifyLink: "https://open.spotify.com/album/7rehxituLcidvHpsIAK2dd?si=tRqFqc0MQtGIBG_t5u1xcg",
         youtubeLink: "https://www.youtube.com/watch?v=JBbBVlUzM4c",
         deezerLink: "https://deezer.page.link/K5t9wqx4jBaNHuwM8",
@@ -57,7 +57,7 @@ const albums = reactive({
         id: 'whatif',
         name: "What if",
         date: "September 9, 2021",
-        imgSrc: useUrl("../assets/images/album/whatif.jpeg"),
+        imgSrc: useUrl("images/album/whatif.jpeg"),
         spotifyLink: "https://open.spotify.com/album/1uzJxIBPdZoBDbcb3ChvVR?si=zyPXOnK1T8uFXUMJBHxAig",
         youtubeLink: "https://www.youtube.com/watch?v=vJgiw46x-1w",
         deezerLink: "https://deezer.page.link/GSPRHyzwG788qTmM9",
@@ -69,7 +69,7 @@ const albums = reactive({
         id: 'angel',
         name: "The Angel",
         date: "February 25, 2020",
-        imgSrc: useUrl("../assets/images/album/angel.jpeg"),
+        imgSrc: useUrl("images/album/angel.jpeg"),
         spotifyLink: "https://open.spotify.com/album/0RLQ00SKB5nGkMnUdpgKDL?si=3jt8TQ0CT6KBOkhZQc4h2w",
         youtubeLink: "https://www.youtube.com/watch?v=z90wYc70cbQ",
         deezerLink: "https://deezer.page.link/o5a61UmQ9duptnUy9",
@@ -83,7 +83,7 @@ function toggleAlbumsList() {
     isListOpen.value = !isListOpen.value
 }
 const albumsButtonImage = computed(() => {
-    return isListOpen.value ? useUrl('../assets/images/close.svg') : useUrl('../assets/images/vinyl.svg')
+    return isListOpen.value ? useUrl('images/close.svg') : useUrl('images/vinyl.svg')
 })
 const items = ref([])
 function onItemListClick() {
@@ -126,6 +126,8 @@ useScroll(() => {
 function selectAlbumInList(albumId) {
 
 }
+
+window.scrollTo(0,0)
 </script>
 
 <template>
