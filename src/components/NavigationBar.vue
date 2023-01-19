@@ -18,7 +18,7 @@ function toggleNavMenu() {
     isNavMenuOpen.value = !isNavMenuOpen.value
 }
 const menuButtonImage = computed(() => {
-    return isNavMenuOpen.value ? useUrl("../assets/images/close.svg") : useUrl("../assets/images/menu.svg")
+    return isNavMenuOpen.value ? useUrl("images/close.svg") : useUrl("images/menu.svg")
 })
 let isArtworksOpen = ref(false)
 let artworksMenuHeight = ref('0px')
