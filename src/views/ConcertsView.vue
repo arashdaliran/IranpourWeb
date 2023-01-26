@@ -32,7 +32,7 @@ const naghme2016Images = [
 const imm2017Images = [
     {
         address: "images/Concerts/IMM2017/1.jpg",
-        pos: "100% 0%"
+        pos: "60% 0%"
     },
 ]
 const yalda01Images = [
