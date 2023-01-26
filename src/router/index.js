@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,7 +36,13 @@ const router = createRouter({
       name: "gallery",
       component: () => import("../views/GalleryView.vue"),
     },
+    { 
+      path: '/:catchAll(.*)', 
+      name: 'NotFound',
+      component: () => import("../views/PageNotFoundView.vue"),
+    }
   ],
+
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
@@ -46,10 +51,10 @@ const router = createRouter({
       return {
         el: to.hash,
         top : 80,
+        behavior: "smooth"
       };
     }
     return { x: 0, y: 0 };
   }
 });
-
 export default router;
