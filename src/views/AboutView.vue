@@ -30,7 +30,7 @@ main{
 }
 p {
     margin-top: 20px;
-    font-size: larger;
+    line-height: 34px;
 }
 
 img {

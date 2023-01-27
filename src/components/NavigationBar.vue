@@ -153,7 +153,8 @@ function closeArtworksMenu() {
 
     >* {
         padding: 8px 10px;
-        font-size: 14px;
+        font-size: 19px;
+        font-weight: 500;
         width: auto;
     }
 }
@@ -182,7 +183,7 @@ function closeArtworksMenu() {
 
     >* {
         padding: 6px;
-        font-size: larger;
+        font-size: 16px;
     }
 }
 </style>
