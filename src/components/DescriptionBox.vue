@@ -5,7 +5,7 @@ const emit = defineEmits('isTranslate')
 const props = defineProps({
     hasTranslate : Boolean,
 })
-const isTranslateSelected = ref(false)
+const isTranslateSelected = ref(true)
 const vp = useViewport()
 </script>
 
@@ -38,7 +38,10 @@ const vp = useViewport()
 button {
     font-weight: bolder;
 }
-
+h5{
+    margin-right: 5px;
+    padding: 20px;
+}
 h4{
     text-align: center;
     line-height: 30px;
@@ -82,6 +85,9 @@ h4{
 
     >button {
         padding: 6px;
+    }
+    >h5{
+        flex-shrink: 0;
     }
 }
 </style>

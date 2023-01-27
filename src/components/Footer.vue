@@ -77,4 +77,10 @@ h4{
     color: gray;
     user-select: none;
 }
+h3{
+    font-size: 22px;
+}
+h5{
+    font-size: 10px;
+}
 </style>

@@ -152,7 +152,8 @@ function closeArtworksMenu() {
     }
 
     >* {
-        padding: 4px 10px;
+        padding: 8px 10px;
+        font-size: 14px;
         width: auto;
     }
 }
@@ -164,7 +165,8 @@ function closeArtworksMenu() {
     max-height: v-bind(artworksMenuHeight);
 
     >* {
-        padding: 7px 0px;
+        padding: 10px 0px;
+        font-size: 16px;
     }
 }
 

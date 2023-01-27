@@ -293,9 +293,10 @@ window.scrollTo(0,0)
 <style scoped lang="scss">
 @use '../assets/main.scss' as *;
 
+$listOffset : 350px;
 .albumsList {
     background-color: rgb(40, 40, 35);
-    max-width: 260px;
+    max-width: $listOffset;
     width: 60%;
     height: 100%;
     position: fixed;
@@ -342,7 +343,7 @@ window.scrollTo(0,0)
 
 .mainDesktop {
     margin-right: 20px;
-    margin-left: 280px;
+    margin-left: $listOffset;
     max-width: 100%;
 }
 

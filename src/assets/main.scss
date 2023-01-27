@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Monsieur+La+Doulaise&family=Quintessential&family=Tangerine:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Monsieur+La+Doulaise&family=Quintessential&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Shippori+Mincho:wght@400;500;600;700;800&family=Beau+Rivage&family=Beau+Rivage&family=Josefin+Slab&family=Lavishly+Yours&family=Quintessential&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&display=swap');
 // Colors:
 $titleColor: #f2f2f2;
 $itemColor: #ffffeb;
@@ -8,10 +9,14 @@ $itemBgColor: rgb(46, 46, 46);
 $navbarColor: rgb(52, 52, 52);
 $clickedColor: rgb(147, 147, 116);
 //fonts:
-$titleFont : 'Monsieur La Doulaise', cursive;
-$linkFont : 'Quintessential', cursive;
-$subtitleFont : 'Josefin Slab', serif;
-$textFont : 'Josefin Slab', serif;
+// $titleFont : 'Monsieur La Doulaise', cursive;
+$titleFont : 'Lavishly Yours', serif;
+$linkFont : 'Cinzel Decorative', serif;
+$description : 'Josefin Slab', serif;
+$subtitleFont : 'Cinzel Decorative', serif;
+$textFont : 'Shippori', serif;
+$headers : 'Cinzel Decorative', serif;
+$ItemTitle : 'Cinzel', serif;
 //sizes:
 $appBarHeight : 60px;
 
@@ -48,7 +53,7 @@ h1 {
 a,
 button {
   font-family: $linkFont;
-  font-size: small;
+  font-size: 9px;
   text-decoration: none;
   color: $itemColor;
   transition: background-color 0.2s, border-radius 0.2s;
@@ -71,7 +76,7 @@ button {
 p{
   font-family: $textFont;
   font-size: large;
-  font-weight: 600;
+  font-weight: 400;
   color: #e6e6e6;
   padding-bottom: 20px;
   line-height: 25px;
@@ -81,24 +86,29 @@ code{
 }
 h2{
   font-size: 35px;
-  font-weight: bolder;
+  font-weight: 400;
 }
 h3{
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 550;
+  font-family: $headers;
+  color: #f2f2f2;
 }
 h4{
   font-size: 20px;
   font-weight: 900;
+  font-family: $description ;
+  color: #f2f2f2;
 }
 h5{
   font-size: 15px;
 }
 
-h2, h3, h4,h5 ,h6{
-  font-family: $textFont;
+h2,h5 ,h6{
+  font-family: $headers;
   color: #f2f2f2;
 }
+
 //style of classes:
 .farsi {
   text-align: right;
