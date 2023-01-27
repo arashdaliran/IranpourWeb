@@ -9,7 +9,7 @@ window.scrollTo(0,0)
 <template>
     <NavigationBar class="navBar"></NavigationBar>
     <main :class="{ desktop: !vp.isMobile }">
-        <img src="../assets/images/Iranpour.jpeg">
+        <img src="../assets/images/Gallery/AliKhandan.jpg">
         <p><span style="font-size: 50px">A</span>lireza Iranpour, born in Isfahan, Iran, is a classical pianist who
             completed his bachelor's degree in
             Mechanical Engineering. He is currently studying music and improving as a musician. He is also interested in

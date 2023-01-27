@@ -41,8 +41,12 @@ const yalda01Images = [
         pos: "40% 0%"
     },
     {
-        address: "images/Concerts/Yalda2017/2.jpg",
-        pos: "30% 0%"
+        address: "images/Concerts/Yalda2017/4.jpg",
+        pos: "20% 0%"
+    },
+    {
+        address: "images/Concerts/Yalda2017/5.jpg",
+        pos: "65% 0%"
     },
 ]
 const yalda02Images = [
