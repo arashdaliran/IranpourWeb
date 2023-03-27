@@ -7,6 +7,12 @@ const vp = useViewport()
 <template>
     <main>
         <h2 :class="{ biggerFont: !vp.isMobile }">Latest Singles</h2>
+        <a :class="{ albumDesktop: !vp.isMobile }" href="/musics#lastSunset">
+            <img class="albumImage" src="../assets/images/album/theLastSunset.jpeg" />
+            <h3>The Last Sunset</h3>
+            <h4>2023</h4>
+            <p class="collapseText">It was built, destroyed and it remained a sad song on the world </p>
+        </a>
         <a :class="{ albumDesktop: !vp.isMobile }" href="/musics#caucasian">
             <img class="albumImage" src="../assets/images/album/caucasian.jpg" />
             <h3>Caucasian</h3>

@@ -10,6 +10,14 @@ import { useScroll, useViewport } from '../composables/NoobiesQueries';
 import { useUrl } from '../composables/NoobiesUrlMaker';
 const vp = useViewport()
 const albums = reactive({
+    lastSunset: {
+        id: 'lastSunset',
+        name: "The Last Sunset",
+        date: "March 22, 2023",
+        imgSrc: useUrl("images/album/theLastSunset.jpeg"),
+        spotifyLink: "https://open.spotify.com/album/7z5h2f2mn1S3u1mS4H9P2z?si=04dg36RYS263iqVSUlIKtA&utm_source=copy-link",
+        deezerLink: "https://www.deezer.com/de/album/420225447",
+    },
     caucasian: {
         id: 'caucasian',
         name: "Caucasian",
@@ -141,6 +149,15 @@ window.scrollTo(0,0)
             :id="item.id" @on-item-click="onItemListClick(item)" />
     </aside>
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
+        <AlbumComponent :id="albums.lastSunset.id" :name="albums.lastSunset.name" :date="albums.lastSunset.date"
+            :image="albums.lastSunset.imgSrc">
+            <template #mainDescription>
+                <p>It was built, destroyed and it remained a sad song on the world</p>
+            </template>
+            <template #listen>
+                <MusicLinkBox :spotify="albums.lastSunset.spotifyLink" :deezer="albums.lastSunset.deezerLink" />
+            </template>
+        </AlbumComponent>
         <AlbumComponent :id="albums.caucasian.id" :name="albums.caucasian.name" :date="albums.caucasian.date"
             :image="albums.caucasian.imgSrc">
             <template #mainDescription>
