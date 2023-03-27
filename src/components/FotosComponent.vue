@@ -6,8 +6,9 @@ const vp = useViewport()
 const props = defineProps({
     images: Array
 })
-const isOnlyOne = computed(()=>{
-    return props.images.length == 1
+const imagesCount = computed(()=>{
+    console.log("count is : " + props.images.length)
+    return props.images.length
 })
 const showPreview = ref(false)
 const previewSource = ref("")
@@ -20,9 +21,9 @@ function openPreview(address) {
 
 <template>
     <div class="gridGallery" :class="{ tabletGrid: vp.isTablet, desktopGrid: vp.isDesktop,
-                                     oneColumn : isOnlyOne}">
+                                     oneColumn : imagesCount == 1, twoColumn : imagesCount == 2}">
         <button v-for="img in props.images" @click="openPreview(img.address)">
-            <img :src="useUrl(img.address)" :style="{ objectPosition: img.pos }" />
+            <img class="imagesClass" :src="useUrl(img.address)" :style="{ objectPosition: img.pos}" />
         </button>
     </div>
     <div v-if="showPreview" class="imagePreviewParent">
@@ -55,12 +56,23 @@ function openPreview(address) {
         margin: auto;
     }
 }
+.twoColumn{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    button {
+        height: 400px;
+    }
+}
+.imagesClass{
+    filter: grayscale(100%);
+}
 img{
     width: 100%;
     height: 100%;
 }
 .tabletGrid {
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50% ;
 
 }
 button:hover{
@@ -68,7 +80,7 @@ button:hover{
     border-radius: 0;
 }
 .desktopGrid {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
 
     button {
         height: 400px;

@@ -142,7 +142,7 @@ function closeArtworksMenu() {
     max-height: 100px;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 600px;
+    max-width: 950px;
     margin: auto;
 
     .artDesktop {

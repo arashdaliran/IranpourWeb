@@ -23,7 +23,7 @@ window.scrollTo(0,0)
         <div class="imageContainer">
             <img src="../assets/images/home/iranpour-main.png" alt="Alireza Iranpour" />
             <h1 v-font-sizer="0.06" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
-            <p v-font-sizer="0.04" class="subtitle">Pianist & Composer</p>
+            <p v-font-sizer="0.05" class="subtitle">Pianist & Composer</p>
         </div>
         <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
         <LatestComponent />
@@ -90,7 +90,7 @@ img {
     text-align: center;
     position: absolute;
     // font-size: 10px;
-    font-weight: bold;
+    // font-weight: bold;
     width: 100%;
     transform: translate(-50%, -50%);
     bottom: 0%;

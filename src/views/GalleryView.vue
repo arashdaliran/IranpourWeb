@@ -4,30 +4,30 @@ import { ref,computed } from 'vue';
 import { useViewport } from '../composables/NoobiesQueries';
 import FotosComponent from '../components/FotosComponent.vue';
 const images = [
-    {
-        address : "images/Gallery/AliPiano.jpg",
+{
+        address : "images/Gallery/bw2.jpg",
         pos : "0% 30%"
     },
     {
-        address : "images/Gallery/AliOfogh.jpg",
+        address : "images/Gallery/bw1.jpg",
         pos : "0% 30%"
     },
     {
-        address : "images/Gallery/AliPhilsuf.jpg",
+        address : "images/Gallery/bw3.jpg",
+        pos : "0% 30%"
+    },
+    {
+        address : "images/Gallery/prof1.jpg",
+        pos : "0% 30%"
+    },
+    {
+        address : "images/Gallery/prof2.jpg",
+        pos : "0% 30%"
+    },
+    {
+        address : "images/Gallery/prof3.jpg",
         pos : "0% 10%"
     },  
-    {
-        address : "images/Gallery/AliKhandan.jpg",
-        pos : "0% 30%"
-    },
-    {
-        address : "images/Gallery/AliAkhmu.jpg",
-        pos : "0% 30%"
-    },
-    {
-        address : "images/Gallery/AliNimru.jpg",
-        pos : "0% 30%"
-    },
     
 ]
 
