@@ -17,6 +17,8 @@ const albums = reactive({
         imgSrc: useUrl("images/album/theLastSunset.jpeg"),
         spotifyLink: "https://open.spotify.com/album/7z5h2f2mn1S3u1mS4H9P2z?si=04dg36RYS263iqVSUlIKtA&utm_source=copy-link",
         deezerLink: "https://www.deezer.com/de/album/420225447",
+        amazonLink: "https://music.amazon.com/albums/B0BZ5N3ZRN?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_WhHizr7RwnrDmNDZyKIFDOJSx&trackAsin=B0BZ5BLXR4",
+        youtubeLink: "https://youtu.be/ZHY4fPOyEwg"
     },
     caucasian: {
         id: 'caucasian',
@@ -151,13 +153,18 @@ window.scrollTo(0,0)
     <main class="main" :class="{ mainDesktop: vp.isDesktop }">
         <AlbumComponent :id="albums.lastSunset.id" :name="albums.lastSunset.name" :date="albums.lastSunset.date"
             :image="albums.lastSunset.imgSrc">
-            <template #mainDescription>
+            <template #translate>
                 <p>It was built, destroyed and it remained a sad song on the world</p>
             </template>
+            <template #mainDescription>
+                <p class="farsi">ساخته شد، خراب شد، و آوازی غمگین جهان را فراگرفت.</p>
+            </template>
             <template #listen>
-                <MusicLinkBox :spotify="albums.lastSunset.spotifyLink" :deezer="albums.lastSunset.deezerLink" />
+                <MusicLinkBox :spotify="albums.lastSunset.spotifyLink" :deezer="albums.lastSunset.deezerLink" 
+                :amazon="albums.lastSunset.amazonLink" :youtube="albums.lastSunset.youtubeLink" />
             </template>
         </AlbumComponent>
+        <Seperator />
         <AlbumComponent :id="albums.caucasian.id" :name="albums.caucasian.name" :date="albums.caucasian.date"
             :image="albums.caucasian.imgSrc">
             <template #mainDescription>
