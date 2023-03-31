@@ -89,6 +89,7 @@ function closeArtworksMenu() {
 
     h1 {
         flex-grow: 1;
+        font-size: 20px;
     }
 
     .menuButton {

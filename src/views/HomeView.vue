@@ -22,8 +22,8 @@ window.scrollTo(0,0)
     <template class="mainBody" :class="{ topMargin: vp.isMobile }">
         <div class="imageContainer">
             <img src="../assets/images/home/iranpour-main.png" alt="Alireza Iranpour" />
-            <h1 v-font-sizer="0.06" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
-            <p v-font-sizer="0.05" class="subtitle">Pianist & Composer</p>
+            <h1 v-font-sizer="0.030" v-if="!vp.isMobile" class="titleDesktop">Alireza Iranpour</h1>
+            <p v-font-sizer="0.045" class="subtitle">Pianist & Composer</p>
         </div>
         <NavigationBar class="desktopNav" v-if="!vp.isMobile" />
         <LatestComponent />
@@ -77,11 +77,11 @@ img {
 
 .titleDesktop {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 8%;
+    left: 2%;
     color: black;
     font-weight: bolder;
-    text-shadow: 3px 3px 10px white;
+    text-shadow: 3px 3px 10px rgb(79, 79, 79);
 }
 
 .subtitle {
